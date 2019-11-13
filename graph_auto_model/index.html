@@ -380,21 +380,21 @@
       
         <li class="md-nav__item">
   <a href="#graphautomodel-class" class="md-nav__link">
-    GraphAutoModel class:
+    GraphAutoModel class
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#fit-method" class="md-nav__link">
-    fit method:
+    fit method
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#predict-method" class="md-nav__link">
-    predict method:
+    predict method
   </a>
   
 </li>
@@ -471,21 +471,21 @@
       
         <li class="md-nav__item">
   <a href="#graphautomodel-class" class="md-nav__link">
-    GraphAutoModel class:
+    GraphAutoModel class
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#fit-method" class="md-nav__link">
-    fit method:
+    fit method
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#predict-method" class="md-nav__link">
-    predict method:
+    predict method
   </a>
   
 </li>
@@ -510,8 +510,10 @@
                   <h1>GraphAutoModel</h1>
                 
                 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/auto_model.py#L269">[source]</a></span></p>
-<h3 id="graphautomodel-class">GraphAutoModel class:</h3>
-<pre><code class="python">autokeras.GraphAutoModel(inputs, outputs, name='graph_auto_model', max_trials=100, directory=None, objective='val_loss', seed=None)
+<h3 id="graphautomodel-class">GraphAutoModel class</h3>
+<pre><code class="python">autokeras.GraphAutoModel(
+    inputs, outputs, name=&quot;graph_auto_model&quot;, max_trials=100, directory=None, objective=&quot;val_loss&quot;, seed=None
+)
 </code></pre>
 
 <p>A HyperModel defined by a graph of HyperBlocks.</p>
@@ -538,8 +540,11 @@ the Keras functional API.</p>
 <li><strong>seed</strong>: Int. Random seed.</li>
 </ul>
 <hr />
-<h3 id="fit-method">fit method:</h3>
-<pre><code class="python">GraphAutoModel.fit(x=None, y=None, epochs=None, callbacks=None, validation_split=0, validation_data=None, **kwargs)
+<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/auto_model.py#L69">[source]</a></span></p>
+<h3 id="fit-method">fit method</h3>
+<pre><code class="python">GraphAutoModel.fit(
+    x=None, y=None, epochs=None, callbacks=None, validation_split=0, validation_data=None, **kwargs
+)
 </code></pre>
 
 <p>Search for the best model and hyperparameters for the AutoModel.</p>
@@ -577,7 +582,8 @@ validation data.</p>
 <li><strong>**kwargs</strong>: Any arguments supported by keras.Model.fit.</li>
 </ul>
 <hr />
-<h3 id="predict-method">predict method:</h3>
+<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/auto_model.py#L217">[source]</a></span></p>
+<h3 id="predict-method">predict method</h3>
 <pre><code class="python">GraphAutoModel.predict(x, batch_size=32, **kwargs)
 </code></pre>
 
