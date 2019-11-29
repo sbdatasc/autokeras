@@ -507,9 +507,8 @@
 classification. Use softmax and categorical crossentropy for multi-class
 (more than 2) classification. Use Accuracy as metrics by default.</p>
 <p>The targets passing to the head would have to be tf.data.Dataset, np.ndarray,
-pd.DataFrame or pd.Series. The targets can be raw labels, one-hot encoded for
-multi-class classification, or encoded to a single column for binary
-classification.</p>
+pd.DataFrame or pd.Series. It can be raw labels, one-hot encoded if more than two
+classes, or binary encoded for binary classification.</p>
 <p>The raw labels will be encoded to one column if two classes were found,
 or one-hot encoded if more than two classes were found.</p>
 <p><strong>Arguments</strong></p>
@@ -523,16 +522,17 @@ or one-hot encoded if more than two classes were found.</p>
     If left unspecified, it will be tuned automatically.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/head.py#L193">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/head.py#L192">[source]</a></span></p>
 <h3 id="regressionhead-class">RegressionHead class</h3>
 <pre><code class="python">autokeras.hypermodel.head.RegressionHead(
-    output_dim=None, loss=None, metrics=None, dropout_rate=None, **kwargs
+    output_dim=None, loss=&quot;mean_squared_error&quot;, metrics=None, dropout_rate=None, **kwargs
 )
 </code></pre>
 
 <p>Regression Dense layers.</p>
 <p>The targets passing to the head would have to be tf.data.Dataset, np.ndarray,
-pd.DataFrame or pd.Series.</p>
+pd.DataFrame or pd.Series. It can be single-column or multi-column. The
+values should all be numerical.</p>
 <p><strong>Arguments</strong></p>
 <ul>
 <li><strong>output_dim</strong>: Int. The number of output dimensions. Defaults to None.

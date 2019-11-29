@@ -512,12 +512,19 @@
                 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/auto_model.py#L12">[source]</a></span></p>
 <h3 id="automodel-class">AutoModel class</h3>
 <pre><code class="python">autokeras.auto_model.AutoModel(
-    inputs, outputs, name=&quot;auto_model&quot;, max_trials=100, directory=None, objective=&quot;val_loss&quot;, seed=None
+    inputs,
+    outputs,
+    name=&quot;auto_model&quot;,
+    max_trials=100,
+    directory=None,
+    objective=&quot;val_loss&quot;,
+    tuner=&quot;greedy&quot;,
+    seed=None,
 )
 </code></pre>
 
-<p>A Model defined by inputs and outputs.</p>
-<p>AutoModel combines a HyperModel and a Tuner to tune the HyperModel.
+<p>A Model defined by inputs and outputs.
+AutoModel combines a HyperModel and a Tuner to tune the HyperModel.
 The user can use it in a similar way to a Keras model since it
 also has <code>fit()</code> and  <code>predict()</code> methods.</p>
 <p>The user can specify the inputs and outputs of the AutoModel. It will infer
@@ -536,10 +543,12 @@ the rest of the high-level neural architecture.</p>
     AutoModel in the current directory.</li>
 <li><strong>objective</strong>: String. Name of model metric to minimize
     or maximize, e.g. 'val_accuracy'. Defaults to 'val_loss'.</li>
+<li><strong>tuner</strong>: String. It should be one of 'greedy', 'bayesian', 'hyperband' or
+    'random'. Defaults to 'greedy'.</li>
 <li><strong>seed</strong>: Int. Random seed.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/auto_model.py#L69">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/auto_model.py#L72">[source]</a></span></p>
 <h3 id="fit-method">fit method</h3>
 <pre><code class="python">AutoModel.fit(
     x=None, y=None, epochs=None, callbacks=None, validation_split=0, validation_data=None, **kwargs
@@ -581,7 +590,7 @@ validation data.</p>
 <li><strong>**kwargs</strong>: Any arguments supported by keras.Model.fit.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/auto_model.py#L217">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/auto_model.py#L224">[source]</a></span></p>
 <h3 id="predict-method">predict method</h3>
 <pre><code class="python">AutoModel.predict(x, batch_size=32, **kwargs)
 </code></pre>
