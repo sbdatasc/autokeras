@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/img/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.5.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.5.1">
     
     
       
@@ -331,10 +331,94 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-1" type="checkbox" id="nav-6-1">
+    
+    <label class="md-nav__link" for="nav-6-1">
+      Task APIs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-1">
+        Task APIs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../task/" title="Task API" class="md-nav__link">
-      Task API
+    <a href="../image_classifier/" title="ImageClassifier" class="md-nav__link">
+      ImageClassifier
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../image_regressor/" title="ImageRegressor" class="md-nav__link">
+      ImageRegressor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../text_classifier/" title="TextClassifier" class="md-nav__link">
+      TextClassifier
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../text_regressor/" title="TextRegressor" class="md-nav__link">
+      TextRegressor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../structured_data_classifier/" title="StructuredDataClassifier" class="md-nav__link">
+      StructuredDataClassifier
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../structured_data_regressor/" title="StructuredDataRegressor" class="md-nav__link">
+      StructuredDataRegressor
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -399,6 +483,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#evaluate-method" class="md-nav__link">
+    evaluate method
+  </a>
+  
+</li>
+      
       
       
       
@@ -407,6 +498,49 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-4" type="checkbox" id="nav-6-4">
+    
+    <label class="md-nav__link" for="nav-6-4">
+      Building Blocks
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-4">
+        Building Blocks
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../node/" title="Node" class="md-nav__link">
+      Node
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../preprocessor/" title="Preprocessor" class="md-nav__link">
+      Preprocessor
+    </a>
   </li>
 
         
@@ -431,6 +565,11 @@
     <a href="../head/" title="Head" class="md-nav__link">
       Head
     </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -490,6 +629,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#evaluate-method" class="md-nav__link">
+    evaluate method
+  </a>
+  
+</li>
+      
       
       
       
@@ -511,7 +657,7 @@
                 
                 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/auto_model.py#L276">[source]</a></span></p>
 <h3 id="graphautomodel-class">GraphAutoModel class</h3>
-<pre><code class="python">autokeras.GraphAutoModel(
+<pre><code class="python">autokeras.auto_model.GraphAutoModel(
     inputs,
     outputs,
     name=&quot;graph_auto_model&quot;,
@@ -551,7 +697,7 @@ the Keras functional API.</p>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/auto_model.py#L72">[source]</a></span></p>
 <h3 id="fit-method">fit method</h3>
-<pre><code class="python">GraphAutoModel.fit(
+<pre><code class="python">AutoModel.fit(
     x=None, y=None, epochs=None, callbacks=None, validation_split=0, validation_data=None, **kwargs
 )
 </code></pre>
@@ -593,7 +739,7 @@ validation data.</p>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/auto_model.py#L224">[source]</a></span></p>
 <h3 id="predict-method">predict method</h3>
-<pre><code class="python">GraphAutoModel.predict(x, batch_size=32, **kwargs)
+<pre><code class="python">AutoModel.predict(x, batch_size=32, **kwargs)
 </code></pre>
 
 <p>Predict the output for a given testing data.</p>
@@ -606,6 +752,26 @@ validation data.</p>
 <p><strong>Returns</strong></p>
 <p>A list of numpy.ndarray objects or a single numpy.ndarray.
 The predicted results.</p>
+<hr />
+<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/auto_model.py#L254">[source]</a></span></p>
+<h3 id="evaluate-method">evaluate method</h3>
+<pre><code class="python">AutoModel.evaluate(x, y=None, batch_size=32, **kwargs)
+</code></pre>
+
+<p>Evaluate the best model for the given data.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>x</strong>: Any allowed types according to the input node. Testing data.</li>
+<li><strong>y</strong>: Any allowed types according to the head. Testing targets.
+    Defaults to None.</li>
+<li><strong>batch_size</strong>: Int. Defaults to 32.</li>
+<li><strong>**kwargs</strong>: Any arguments supported by keras.Model.evaluate.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p>Scalar test loss (if the model has a single output and no metrics) or
+list of scalars (if the model has multiple outputs and/or metrics).
+The attribute model.metrics_names will give you the display labels for
+the scalar outputs.</p>
 <hr />
                 
                   
@@ -642,13 +808,13 @@ The predicted results.</p>
           </a>
         
         
-          <a href="../block/" title="Block" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../node/" title="Node" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Block
+                Node
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -676,7 +842,7 @@ The predicted results.</p>
       
     </div>
     
-      <script src="../assets/javascripts/application.a8b5e56f.js"></script>
+      <script src="../assets/javascripts/application.8e03edeb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       

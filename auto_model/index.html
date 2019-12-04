@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/img/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.5.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.5.1">
     
     
       
@@ -331,10 +331,94 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-1" type="checkbox" id="nav-6-1">
+    
+    <label class="md-nav__link" for="nav-6-1">
+      Task APIs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-1">
+        Task APIs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../task/" title="Task API" class="md-nav__link">
-      Task API
+    <a href="../image_classifier/" title="ImageClassifier" class="md-nav__link">
+      ImageClassifier
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../image_regressor/" title="ImageRegressor" class="md-nav__link">
+      ImageRegressor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../text_classifier/" title="TextClassifier" class="md-nav__link">
+      TextClassifier
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../text_regressor/" title="TextRegressor" class="md-nav__link">
+      TextRegressor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../structured_data_classifier/" title="StructuredDataClassifier" class="md-nav__link">
+      StructuredDataClassifier
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../structured_data_regressor/" title="StructuredDataRegressor" class="md-nav__link">
+      StructuredDataRegressor
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -387,6 +471,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#evaluate-method" class="md-nav__link">
+    evaluate method
+  </a>
+  
+</li>
+      
       
       
       
@@ -415,6 +506,49 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-4" type="checkbox" id="nav-6-4">
+    
+    <label class="md-nav__link" for="nav-6-4">
+      Building Blocks
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-4">
+        Building Blocks
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../node/" title="Node" class="md-nav__link">
+      Node
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../preprocessor/" title="Preprocessor" class="md-nav__link">
+      Preprocessor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
     <a href="../block/" title="Block" class="md-nav__link">
       Block
@@ -431,6 +565,11 @@
     <a href="../head/" title="Head" class="md-nav__link">
       Head
     </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -486,6 +625,13 @@
         <li class="md-nav__item">
   <a href="#predict-method" class="md-nav__link">
     predict method
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluate-method" class="md-nav__link">
+    evaluate method
   </a>
   
 </li>
@@ -606,6 +752,26 @@ validation data.</p>
 <p>A list of numpy.ndarray objects or a single numpy.ndarray.
 The predicted results.</p>
 <hr />
+<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/auto_model.py#L254">[source]</a></span></p>
+<h3 id="evaluate-method">evaluate method</h3>
+<pre><code class="python">AutoModel.evaluate(x, y=None, batch_size=32, **kwargs)
+</code></pre>
+
+<p>Evaluate the best model for the given data.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>x</strong>: Any allowed types according to the input node. Testing data.</li>
+<li><strong>y</strong>: Any allowed types according to the head. Testing targets.
+    Defaults to None.</li>
+<li><strong>batch_size</strong>: Int. Defaults to 32.</li>
+<li><strong>**kwargs</strong>: Any arguments supported by keras.Model.evaluate.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p>Scalar test loss (if the model has a single output and no metrics) or
+list of scalars (if the model has multiple outputs and/or metrics).
+The attribute model.metrics_names will give you the display labels for
+the scalar outputs.</p>
+<hr />
                 
                   
                 
@@ -626,7 +792,7 @@ The predicted results.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../task/" title="Task API" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../structured_data_regressor/" title="StructuredDataRegressor" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -635,7 +801,7 @@ The predicted results.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Task API
+                StructuredDataRegressor
               </span>
             </div>
           </a>
@@ -675,7 +841,7 @@ The predicted results.</p>
       
     </div>
     
-      <script src="../assets/javascripts/application.a8b5e56f.js"></script>
+      <script src="../assets/javascripts/application.8e03edeb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       

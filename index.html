@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/img/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.5.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.5.1">
     
     
       
@@ -313,8 +313,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#support-auto-keras" class="md-nav__link">
-    Support Auto-Keras
+  <a href="#support-autokeras" class="md-nav__link">
+    Support AutoKeras
   </a>
   
 </li>
@@ -416,10 +416,94 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-1" type="checkbox" id="nav-6-1">
+    
+    <label class="md-nav__link" for="nav-6-1">
+      Task APIs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-1">
+        Task APIs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="task/" title="Task API" class="md-nav__link">
-      Task API
+    <a href="image_classifier/" title="ImageClassifier" class="md-nav__link">
+      ImageClassifier
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="image_regressor/" title="ImageRegressor" class="md-nav__link">
+      ImageRegressor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="text_classifier/" title="TextClassifier" class="md-nav__link">
+      TextClassifier
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="text_regressor/" title="TextRegressor" class="md-nav__link">
+      TextRegressor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="structured_data_classifier/" title="StructuredDataClassifier" class="md-nav__link">
+      StructuredDataClassifier
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="structured_data_regressor/" title="StructuredDataRegressor" class="md-nav__link">
+      StructuredDataRegressor
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -452,6 +536,49 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-4" type="checkbox" id="nav-6-4">
+    
+    <label class="md-nav__link" for="nav-6-4">
+      Building Blocks
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-4">
+        Building Blocks
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="node/" title="Node" class="md-nav__link">
+      Node
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="preprocessor/" title="Preprocessor" class="md-nav__link">
+      Preprocessor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
     <a href="block/" title="Block" class="md-nav__link">
       Block
@@ -468,6 +595,11 @@
     <a href="head/" title="Head" class="md-nav__link">
       Head
     </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -544,8 +676,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#support-auto-keras" class="md-nav__link">
-    Support Auto-Keras
+  <a href="#support-autokeras" class="md-nav__link">
+    Support AutoKeras
   </a>
   
 </li>
@@ -583,17 +715,17 @@
                 
                 <p><img src="/img/row_red.svg" alt="drawing" width="400px" style="display: block; margin-left: auto; margin-right: auto"/></p>
 <h2 id="_1"></h2>
-<p>Auto-Keras is an open source software library for automated machine learning (AutoML).
+<p>AutoKeras is an open source software library for automated machine learning (AutoML).
 It is developed by <a href="http://faculty.cs.tamu.edu/xiahu/index.html" target="_blank" rel="nofollow">DATA Lab</a> at Texas A&amp;M University and community contributors.
 The ultimate goal of AutoML is to provide easily accessible deep learning tools to domain experts with limited data science or machine learning background.
-Auto-Keras provides functions to automatically search for architecture and hyperparameters of deep learning models.</p>
+AutoKeras provides functions to automatically search for architecture and hyperparameters of deep learning models.</p>
 <h1 id="autokeras-10-is-coming-soon">AutoKeras 1.0 is coming soon!</h1>
 <h2 id="installation">Installation</h2>
 <p>To install the package, please use the <code>pip</code> installation as follows:</p>
 <pre><code>pip3 install autokeras # for 0.4 version
 pip3 install git+git://github.com/keras-team/autokeras@master#egg=autokeras # for 1.0 version
 </code></pre>
-<p><strong>Note:</strong> currently, Auto-Keras is only compatible with: <strong>Python 3.6</strong>.</p>
+<p><strong>Note:</strong> currently, AutoKeras is only compatible with: <strong>Python 3.6</strong>.</p>
 <h2 id="example">Example</h2>
 <p>Here is a short example of using the package.</p>
 <pre><code class="python">import autokeras as ak
@@ -617,22 +749,22 @@ results = clf.predict(x_test)
 }
 </code></pre>
 <h2 id="community">Community</h2>
-<p>You can use Gitter to communicate with people who are also interested in Auto-Keras.
+<p>You can use Gitter to communicate with people who are also interested in AutoKeras.
 <a href="https://gitter.im/autokeras/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"><img src="https://badges.gitter.im/autokeras/Lobby.svg" alt="Join the chat at https://gitter.im/autokeras/Lobby" style="width: 92px"></a></p>
 <p>You can also follow us on Twitter <a href="https://twitter.com/autokeras">@autokeras</a> for the latest news.</p>
 <h2 id="contributing-code">Contributing Code</h2>
 <p>You can follow the <a href="https://autokeras.com/contributing/">Contributing Guide</a> for details.
 The easist way to contribute is to resolve the issues with the "<a href="https://github.com/keras-team/autokeras/labels/call%20for%20contributors">call for contributors</a>" tag.
 They are friendly to beginners.</p>
-<h2 id="support-auto-keras">Support Auto-Keras</h2>
+<h2 id="support-autokeras">Support AutoKeras</h2>
 <p>We accept donations on <a href="https://opencollective.com/autokeras">Open Collective</a>.
 Thank every backer for supporting us!</p>
 <p><a href="https://opencollective.com/autokeras/donate" target="_blank">
   <img src="https://opencollective.com/autokeras/donate/button@2x.png?color=blue" width=200 />
 </a></p>
 <h2 id="disclaimer">DISCLAIMER</h2>
-<p>Please note that this is a <strong>pre-release</strong> version of the Auto-Keras which is still undergoing final testing before its official release. The website, its software and all content found on it are provided on an
-“as is” and “as available” basis. Auto-Keras does <strong>not</strong> give any warranties, whether express or implied, as to the suitability or usability of the website, its software or any of its content. Auto-Keras will <strong>not</strong> be liable for any loss, whether such loss is direct, indirect, special or consequential, suffered by any party as a result of their use of the libraries or content. Any usage of the libraries is done at the user’s own risk and the user will be solely responsible for any damage to any computer system or loss of data that results from such activities. Should you encounter any bugs, glitches, lack of functionality or
+<p>Please note that this is a <strong>pre-release</strong> version of the AutoKeras which is still undergoing final testing before its official release. The website, its software and all content found on it are provided on an
+"as is" and "as available" basis. AutoKeras does <strong>not</strong> give any warranties, whether express or implied, as to the suitability or usability of the website, its software or any of its content. AutoKeras will <strong>not</strong> be liable for any loss, whether such loss is direct, indirect, special or consequential, suffered by any party as a result of their use of the libraries or content. Any usage of the libraries is done at the user's own risk and the user will be solely responsible for any damage to any computer system or loss of data that results from such activities. Should you encounter any bugs, glitches, lack of functionality or
 other problems on the website, please let us know immediately so we
 can rectify these accordingly. Your help in this regard is greatly
 appreciated.</p>
@@ -695,7 +827,7 @@ appreciated.</p>
       
     </div>
     
-      <script src="assets/javascripts/application.a8b5e56f.js"></script>
+      <script src="assets/javascripts/application.8e03edeb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"."}})</script>
       
