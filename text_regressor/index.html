@@ -299,7 +299,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../contributing/" title="Contributing Guide" class="md-nav__link">
+    <a href="../contributing.md" title="Contributing Guide" class="md-nav__link">
       Contributing Guide
     </a>
   </li>
@@ -540,7 +540,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../preprocessor/" title="Preprocessor" class="md-nav__link">
+    <a href="../preprocessor.md" title="Preprocessor" class="md-nav__link">
       Preprocessor
     </a>
   </li>
@@ -564,7 +564,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../head/" title="Head" class="md-nav__link">
+    <a href="../head.md" title="Head" class="md-nav__link">
       Head
     </a>
   </li>
@@ -657,7 +657,7 @@
                 
                   <h1>TextRegressor</h1>
                 
-                <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/task.py#L318">[source]</a></span></p>
+                <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/task.py#L333">[source]</a></span></p>
 <h3 id="textregressor-class">TextRegressor class</h3>
 <pre><code class="python">autokeras.TextRegressor(
     output_dim=None,
@@ -667,6 +667,7 @@
     max_trials=100,
     directory=None,
     objective=&quot;val_loss&quot;,
+    overwrite=True,
     seed=None,
 )
 </code></pre>
@@ -687,10 +688,13 @@
     AutoModel in the current directory.</li>
 <li><strong>objective</strong>: String. Name of model metric to minimize
     or maximize, e.g. 'val_accuracy'. Defaults to 'val_loss'.</li>
+<li><strong>overwrite</strong>: Boolean. Defaults to <code>False</code>. If <code>False</code>, reloads an existing
+    project of the same name if one is found. Otherwise, overwrites the
+    project.</li>
 <li><strong>seed</strong>: Int. Random seed.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/task.py#L358">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/task.py#L378">[source]</a></span></p>
 <h3 id="fit-method">fit method</h3>
 <pre><code class="python">TextRegressor.fit(
     x=None, y=None, epochs=None, callbacks=None, validation_split=0, validation_data=None, **kwargs
@@ -738,7 +742,7 @@ validation data.</p>
 <li><strong>**kwargs</strong>: Any arguments supported by keras.Model.fit.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/auto_model.py#L224">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/auto_model.py#L231">[source]</a></span></p>
 <h3 id="predict-method">predict method</h3>
 <pre><code class="python">TextRegressor.predict(x, batch_size=32, **kwargs)
 </code></pre>
@@ -754,7 +758,7 @@ validation data.</p>
 <p>A list of numpy.ndarray objects or a single numpy.ndarray.
 The predicted results.</p>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/auto_model.py#L254">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/auto_model.py#L261">[source]</a></span></p>
 <h3 id="evaluate-method">evaluate method</h3>
 <pre><code class="python">TextRegressor.evaluate(x, y=None, batch_size=32, **kwargs)
 </code></pre>
