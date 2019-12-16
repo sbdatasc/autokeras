@@ -687,7 +687,7 @@
                 
                 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/preprocessor.py#L598">[source]</a></span></p>
 <h3 id="featureengineering-class">FeatureEngineering class</h3>
-<pre><code class="python">autokeras.hypermodel.preprocessor.FeatureEngineering(max_columns=1000, **kwargs)
+<pre><code class="python">autokeras.FeatureEngineering(max_columns=1000, **kwargs)
 </code></pre>
 
 <p>A preprocessor block does feature engineering for the data.</p>
@@ -699,7 +699,7 @@
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/preprocessor.py#L414">[source]</a></span></p>
 <h3 id="imageaugmentation-class">ImageAugmentation class</h3>
-<pre><code class="python">autokeras.hypermodel.preprocessor.ImageAugmentation(
+<pre><code class="python">autokeras.ImageAugmentation(
     percentage=0.25,
     rotation_range=180,
     random_crop=True,
@@ -741,7 +741,7 @@
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/preprocessor.py#L366">[source]</a></span></p>
 <h3 id="lightgbmblock-class">LightGBMBlock class</h3>
-<pre><code class="python">autokeras.hypermodel.preprocessor.LightGBMBlock(seed=None, **kwargs)
+<pre><code class="python">autokeras.LightGBMBlock(seed=None, **kwargs)
 </code></pre>
 
 <p>LightGBM Block for classification or regression task.</p>
@@ -752,7 +752,7 @@
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/preprocessor.py#L20">[source]</a></span></p>
 <h3 id="normalization-class">Normalization class</h3>
-<pre><code class="python">autokeras.hypermodel.preprocessor.Normalization(**kwargs)
+<pre><code class="python">autokeras.Normalization(**kwargs)
 </code></pre>
 
 <p>Perform basic image transformation and augmentation.</p>
@@ -764,14 +764,14 @@
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/preprocessor.py#L86">[source]</a></span></p>
 <h3 id="texttointsequence-class">TextToIntSequence class</h3>
-<pre><code class="python">autokeras.hypermodel.preprocessor.TextToIntSequence(max_len=None, **kwargs)
+<pre><code class="python">autokeras.TextToIntSequence(max_len=None, **kwargs)
 </code></pre>
 
 <p>Convert raw texts to sequences of word indices.</p>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/preprocessor.py#L143">[source]</a></span></p>
 <h3 id="texttongramvector-class">TextToNgramVector class</h3>
-<pre><code class="python">autokeras.hypermodel.preprocessor.TextToNgramVector(**kwargs)
+<pre><code class="python">autokeras.TextToNgramVector(**kwargs)
 </code></pre>
 
 <p>Convert raw texts to n-gram vectors.</p>

@@ -659,7 +659,7 @@
                 
                 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/task.py#L656">[source]</a></span></p>
 <h3 id="structureddataregressor-class">StructuredDataRegressor class</h3>
-<pre><code class="python">autokeras.task.StructuredDataRegressor(
+<pre><code class="python">autokeras.StructuredDataRegressor(
     column_names=None,
     column_types=None,
     output_dim=None,
@@ -698,7 +698,7 @@
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/task.py#L444">[source]</a></span></p>
 <h3 id="fit-method">fit method</h3>
-<pre><code class="python">SupervisedStructuredDataPipeline.fit(
+<pre><code class="python">StructuredDataRegressor.fit(
     x=None, y=None, epochs=None, callbacks=None, validation_split=0, validation_data=None, **kwargs
 )
 </code></pre>
@@ -740,7 +740,7 @@
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/task.py#L503">[source]</a></span></p>
 <h3 id="predict-method">predict method</h3>
-<pre><code class="python">SupervisedStructuredDataPipeline.predict(x, batch_size=32, **kwargs)
+<pre><code class="python">StructuredDataRegressor.predict(x, batch_size=32, **kwargs)
 </code></pre>
 
 <p>Predict the output for a given testing data.</p>
@@ -758,7 +758,7 @@ The predicted results.</p>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/task.py#L526">[source]</a></span></p>
 <h3 id="evaluate-method">evaluate method</h3>
-<pre><code class="python">SupervisedStructuredDataPipeline.evaluate(x, y=None, batch_size=32, **kwargs)
+<pre><code class="python">StructuredDataRegressor.evaluate(x, y=None, batch_size=32, **kwargs)
 </code></pre>
 
 <p>Evaluate the best model for the given data.</p>

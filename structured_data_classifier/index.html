@@ -659,7 +659,7 @@
                 
                 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/task.py#L553">[source]</a></span></p>
 <h3 id="structureddataclassifier-class">StructuredDataClassifier class</h3>
-<pre><code class="python">autokeras.task.StructuredDataClassifier(
+<pre><code class="python">autokeras.StructuredDataClassifier(
     column_names=None,
     column_types=None,
     num_classes=None,
@@ -743,7 +743,7 @@
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/task.py#L503">[source]</a></span></p>
 <h3 id="predict-method">predict method</h3>
-<pre><code class="python">SupervisedStructuredDataPipeline.predict(x, batch_size=32, **kwargs)
+<pre><code class="python">StructuredDataClassifier.predict(x, batch_size=32, **kwargs)
 </code></pre>
 
 <p>Predict the output for a given testing data.</p>
@@ -761,7 +761,7 @@ The predicted results.</p>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/task.py#L526">[source]</a></span></p>
 <h3 id="evaluate-method">evaluate method</h3>
-<pre><code class="python">SupervisedStructuredDataPipeline.evaluate(x, y=None, batch_size=32, **kwargs)
+<pre><code class="python">StructuredDataClassifier.evaluate(x, y=None, batch_size=32, **kwargs)
 </code></pre>
 
 <p>Evaluate the best model for the given data.</p>

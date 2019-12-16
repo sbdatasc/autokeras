@@ -771,7 +771,7 @@
                 
                 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/block.py#L164">[source]</a></span></p>
 <h3 id="convblock-class">ConvBlock class</h3>
-<pre><code class="python">autokeras.hypermodel.block.ConvBlock(kernel_size=None, num_blocks=None, separable=None, **kwargs)
+<pre><code class="python">autokeras.ConvBlock(kernel_size=None, num_blocks=None, separable=None, **kwargs)
 </code></pre>
 
 <p>Block for vanilla ConvNets.</p>
@@ -786,7 +786,7 @@
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/block.py#L15">[source]</a></span></p>
 <h3 id="denseblock-class">DenseBlock class</h3>
-<pre><code class="python">autokeras.hypermodel.block.DenseBlock(num_layers=None, use_batchnorm=None, dropout_rate=None, **kwargs)
+<pre><code class="python">autokeras.DenseBlock(num_layers=None, use_batchnorm=None, dropout_rate=None, **kwargs)
 </code></pre>
 
 <p>Block for Dense layers.</p>
@@ -802,7 +802,7 @@
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/block.py#L526">[source]</a></span></p>
 <h3 id="embeddingblock-class">EmbeddingBlock class</h3>
-<pre><code class="python">autokeras.hypermodel.block.EmbeddingBlock(
+<pre><code class="python">autokeras.EmbeddingBlock(
     max_features=None, pretraining=None, embedding_dim=None, dropout_rate=None, **kwargs
 )
 </code></pre>
@@ -825,7 +825,7 @@ of a sequence should be the index of the word.</p>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/block.py#L371">[source]</a></span></p>
 <h3 id="merge-class">Merge class</h3>
-<pre><code class="python">autokeras.hypermodel.block.Merge(merge_type=None, **kwargs)
+<pre><code class="python">autokeras.Merge(merge_type=None, **kwargs)
 </code></pre>
 
 <p>Merge block to merge multiple nodes into one.</p>
@@ -837,7 +837,7 @@ of a sequence should be the index of the word.</p>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/block.py#L249">[source]</a></span></p>
 <h3 id="resnetblock-class">ResNetBlock class</h3>
-<pre><code class="python">autokeras.hypermodel.block.ResNetBlock(version=None, pooling=None, **kwargs)
+<pre><code class="python">autokeras.ResNetBlock(version=None, pooling=None, **kwargs)
 </code></pre>
 
 <p>Block for ResNet.</p>
@@ -851,7 +851,7 @@ of a sequence should be the index of the word.</p>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/block.py#L79">[source]</a></span></p>
 <h3 id="rnnblock-class">RNNBlock class</h3>
-<pre><code class="python">autokeras.hypermodel.block.RNNBlock(
+<pre><code class="python">autokeras.RNNBlock(
     return_sequences=False, bidirectional=None, num_layers=None, layer_type=None, **kwargs
 )
 </code></pre>
@@ -871,7 +871,7 @@ of a sequence should be the index of the word.</p>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/block.py#L430">[source]</a></span></p>
 <h3 id="spatialreduction-class">SpatialReduction class</h3>
-<pre><code class="python">autokeras.hypermodel.block.SpatialReduction(reduction_type=None, **kwargs)
+<pre><code class="python">autokeras.SpatialReduction(reduction_type=None, **kwargs)
 </code></pre>
 
 <p>Reduce the dimension of a spatial tensor, e.g. image, to a vector.</p>
@@ -883,7 +883,7 @@ of a sequence should be the index of the word.</p>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/block.py#L477">[source]</a></span></p>
 <h3 id="temporalreduction-class">TemporalReduction class</h3>
-<pre><code class="python">autokeras.hypermodel.block.TemporalReduction(reduction_type=None, **kwargs)
+<pre><code class="python">autokeras.TemporalReduction(reduction_type=None, **kwargs)
 </code></pre>
 
 <p>Reduce the dimension of a temporal tensor, e.g. output of RNN, to a vector.</p>
@@ -895,7 +895,7 @@ of a sequence should be the index of the word.</p>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/block.py#L293">[source]</a></span></p>
 <h3 id="xceptionblock-class">XceptionBlock class</h3>
-<pre><code class="python">autokeras.hypermodel.block.XceptionBlock(
+<pre><code class="python">autokeras.XceptionBlock(
     activation=None, initial_strides=None, num_residual_blocks=None, pooling=None, **kwargs
 )
 </code></pre>
@@ -922,9 +922,7 @@ architecture with a half, an identical, or a double size of the original one.</p
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/hyperblock.py#L9">[source]</a></span></p>
 <h3 id="imageblock-class">ImageBlock class</h3>
-<pre><code class="python">autokeras.hypermodel.hyperblock.ImageBlock(
-    block_type=None, normalize=None, augment=None, seed=None, **kwargs
-)
+<pre><code class="python">autokeras.ImageBlock(block_type=None, normalize=None, augment=None, seed=None, **kwargs)
 </code></pre>
 
 <p>Block for image data.</p>
@@ -942,9 +940,7 @@ which is controlled by a hyperparameter, 'block_type'.</p>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/hyperblock.py#L129">[source]</a></span></p>
 <h3 id="structureddatablock-class">StructuredDataBlock class</h3>
-<pre><code class="python">autokeras.hypermodel.hyperblock.StructuredDataBlock(
-    feature_engineering=True, module_type=None, seed=None, **kwargs
-)
+<pre><code class="python">autokeras.StructuredDataBlock(feature_engineering=True, module_type=None, seed=None, **kwargs)
 </code></pre>
 
 <p>Block for structured data.</p>
@@ -960,7 +956,7 @@ which is controlled by a hyperparameter, 'block_type'.</p>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/hyperblock.py#L81">[source]</a></span></p>
 <h3 id="textblock-class">TextBlock class</h3>
-<pre><code class="python">autokeras.hypermodel.hyperblock.TextBlock(vectorizer=None, pretraining=None, **kwargs)
+<pre><code class="python">autokeras.TextBlock(vectorizer=None, pretraining=None, **kwargs)
 </code></pre>
 
 <p>Block for text data.</p>

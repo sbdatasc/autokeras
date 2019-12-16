@@ -659,7 +659,7 @@
                 
                 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/task.py#L219">[source]</a></span></p>
 <h3 id="textclassifier-class">TextClassifier class</h3>
-<pre><code class="python">autokeras.task.TextClassifier(
+<pre><code class="python">autokeras.TextClassifier(
     num_classes=None,
     multi_label=False,
     loss=None,
@@ -740,7 +740,7 @@ validation data.</p>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/auto_model.py#L224">[source]</a></span></p>
 <h3 id="predict-method">predict method</h3>
-<pre><code class="python">AutoModel.predict(x, batch_size=32, **kwargs)
+<pre><code class="python">TextClassifier.predict(x, batch_size=32, **kwargs)
 </code></pre>
 
 <p>Predict the output for a given testing data.</p>
@@ -756,7 +756,7 @@ The predicted results.</p>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/auto_model.py#L254">[source]</a></span></p>
 <h3 id="evaluate-method">evaluate method</h3>
-<pre><code class="python">AutoModel.evaluate(x, y=None, batch_size=32, **kwargs)
+<pre><code class="python">TextClassifier.evaluate(x, y=None, batch_size=32, **kwargs)
 </code></pre>
 
 <p>Evaluate the best model for the given data.</p>
