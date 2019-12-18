@@ -685,7 +685,7 @@
                 
                   <h1>Preprocessor</h1>
                 
-                <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/preprocessor.py#L624">[source]</a></span></p>
+                <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/preprocessor.py#L724">[source]</a></span></p>
 <h3 id="featureengineering-class">FeatureEngineering class</h3>
 <pre><code class="python">autokeras.FeatureEngineering(max_columns=1000, **kwargs)
 </code></pre>
@@ -697,7 +697,7 @@
     Defaults to 1000.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/preprocessor.py#L439">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/preprocessor.py#L539">[source]</a></span></p>
 <h3 id="imageaugmentation-class">ImageAugmentation class</h3>
 <pre><code class="python">autokeras.ImageAugmentation(
     percentage=0.25,
@@ -739,7 +739,7 @@
 <li><strong>gaussian_noise</strong>: Boolean. Whether to add gaussian noise to the image.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/preprocessor.py#L385">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/preprocessor.py#L488">[source]</a></span></p>
 <h3 id="lightgbm-class">LightGBM class</h3>
 <pre><code class="python">autokeras.LightGBM(seed=None, **kwargs)
 </code></pre>
@@ -771,10 +771,23 @@
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/preprocessor.py#L149">[source]</a></span></p>
 <h3 id="texttongramvector-class">TextToNgramVector class</h3>
-<pre><code class="python">autokeras.TextToNgramVector(**kwargs)
+<pre><code class="python">autokeras.TextToNgramVector(ngram_range=None, stop_words=None, max_features=20000, norm=&quot;l2&quot;, **kwargs)
 </code></pre>
 
 <p>Convert raw texts to n-gram vectors.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>ngram_range</strong>: Int Tuple. Range of sizes of ngram tokens to be extracted.
+    If not specified, it will be tuned automatically. Defaults to None.</li>
+<li><strong>stop_words</strong>: Set or Iterable of strings. List of stop words to be removed
+    during tokenization. Defaults to use regular expression
+    "(?u)\b\w\w+\b".</li>
+<li><strong>max_features</strong>: Positive Int. Maximum number of words to be considered during
+    tokenization. Defaults to 20000.</li>
+<li><strong>norm</strong>: String. Can be ('l1', 'l2' or None) Attribute to replicate
+    normalization in sklearn TfidfVectorizer.
+    Defaults to 'l2'.</li>
+</ul>
 <hr />
                 
                   
