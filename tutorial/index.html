@@ -489,27 +489,15 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../graph_auto_model/" title="GraphAutoModel" class="md-nav__link">
-      GraphAutoModel
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-4" type="checkbox" id="nav-6-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3">
     
-    <label class="md-nav__link" for="nav-6-4">
+    <label class="md-nav__link" for="nav-6-3">
       Building Blocks
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-4">
+      <label class="md-nav__title" for="nav-6-3">
         Building Blocks
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -692,7 +680,7 @@ automodel.fit([x_image, x_structured],
 
 <p>Now we support <code>ImageInput</code>, <code>TextInput</code>, and <code>StructuredDataInput</code>.</p>
 <h2 id="functional-api">Functional API</h2>
-<p>You can also define your own neural architecture with the predefined blocks and <a href="/graph_auto_model">GraphAutoModel</a>.</p>
+<p>You can also define your own neural architecture with the predefined blocks and <a href="/auto_model">AutoModel</a>.</p>
 <pre><code class="python">import autokeras as ak
 import numpy as np
 import tensorflow as tf
@@ -718,7 +706,7 @@ merged_outputs = ak.Merge()((image_outputs, structured_outputs))
 
 classification_outputs = ak.ClassificationHead()(merged_outputs)
 regression_outputs = ak.RegressionHead()(merged_outputs)
-automodel = ak.GraphAutoModel(inputs=inputs,
+automodel = ak.AutoModel(inputs=inputs,
                               outputs=[regression_outputs,
                                        classification_outputs])
 

@@ -494,27 +494,15 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../graph_auto_model/" title="GraphAutoModel" class="md-nav__link">
-      GraphAutoModel
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-4" type="checkbox" id="nav-6-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3">
     
-    <label class="md-nav__link" for="nav-6-4">
+    <label class="md-nav__link" for="nav-6-3">
       Building Blocks
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-4">
+      <label class="md-nav__title" for="nav-6-3">
         Building Blocks
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -674,14 +662,41 @@
 AutoModel combines a HyperModel and a Tuner to tune the HyperModel.
 The user can use it in a similar way to a Keras model since it
 also has <code>fit()</code> and  <code>predict()</code> methods.</p>
-<p>The user can specify the inputs and outputs of the AutoModel. It will infer
-the rest of the high-level neural architecture.</p>
+<p>The AutoModel has two use cases. In the first case, the user only specifies the
+input nodes and output heads of the AutoModel. The AutoModel infers the rest part
+of the model. In the second case, user can specify the high-level architecture of
+the AutoModel by connecting the Blocks with the functional API, which is the same
+as the Keras <a href="https://www.tensorflow.org/guide/keras/functional">functional API</a>.</p>
+<p><strong>Example</strong></p>
+<pre><code class="python"># The user only specifies the input nodes and output heads.
+import autokeras as ak
+ak.AutoModel(
+    inputs=[ak.ImageInput(), ak.TextInput()],
+    outputs=[ak.ClassificationHead(), ak.RegressionHead()]
+)
+</code></pre>
+
+<pre><code class="python"># The user specifies the high-level architecture.
+import autokeras as ak
+image_input = ak.ImageInput()
+image_output = ak.ImageBlock()(image_input)
+text_input = ak.TextInput()
+text_output = ak.TextBlock()(text_input)
+output = ak.Merge()([image_output, text_output])
+classification_output = ak.ClassificationHead()(output)
+regression_output = ak.RegressionHead()(output)
+ak.AutoModel(
+    inputs=[image_input, text_input],
+    outputs=[classification_output, regression_output]
+)
+</code></pre>
+
 <p><strong>Arguments</strong></p>
 <ul>
-<li><strong>inputs</strong>: A list of or a HyperNode instance.
+<li><strong>inputs</strong>: A list of Node instances.
     The input node(s) of the AutoModel.</li>
-<li><strong>outputs</strong>: A list of or a HyperHead instance.
-    The output head(s) of the AutoModel.</li>
+<li><strong>outputs</strong>: A list of Node or Head instances.
+    The output node(s) or head(s) of the AutoModel.</li>
 <li><strong>name</strong>: String. The name of the AutoModel. Defaults to 'auto_model'.</li>
 <li><strong>max_trials</strong>: Int. The maximum number of different Keras Models to try.
     The search may finish before reaching the max_trials. Defaults to 100.</li>
@@ -698,7 +713,7 @@ the rest of the high-level neural architecture.</p>
 <li><strong>seed</strong>: Int. Random seed.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/auto_model.py#L77">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/auto_model.py#L111">[source]</a></span></p>
 <h3 id="fit-method">fit method</h3>
 <pre><code class="python">AutoModel.fit(
     x=None, y=None, epochs=None, callbacks=None, validation_split=0, validation_data=None, **kwargs
@@ -740,7 +755,7 @@ validation data.</p>
 <li><strong>**kwargs</strong>: Any arguments supported by keras.Model.fit.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/auto_model.py#L231">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/auto_model.py#L264">[source]</a></span></p>
 <h3 id="predict-method">predict method</h3>
 <pre><code class="python">AutoModel.predict(x, batch_size=32, **kwargs)
 </code></pre>
@@ -756,7 +771,7 @@ validation data.</p>
 <p>A list of numpy.ndarray objects or a single numpy.ndarray.
 The predicted results.</p>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/auto_model.py#L261">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/auto_model.py#L294">[source]</a></span></p>
 <h3 id="evaluate-method">evaluate method</h3>
 <pre><code class="python">AutoModel.evaluate(x, y=None, batch_size=32, **kwargs)
 </code></pre>
@@ -812,13 +827,13 @@ the scalar outputs.</p>
           </a>
         
         
-          <a href="../graph_auto_model/" title="GraphAutoModel" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../node/" title="Node" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                GraphAutoModel
+                Node
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
