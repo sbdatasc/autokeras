@@ -13,7 +13,7 @@
         <meta name="description" content="Documentation for AutoKeras.">
       
       
-        <link rel="canonical" href="http://autokeras.com/examples/titanic/">
+        <link rel="canonical" href="http://autokeras.com/tutorial/text_regression/">
       
       
       
@@ -40,7 +40,7 @@
     
     
       
-        <title>Titanic - AutoKeras</title>
+        <title>Text Regression - AutoKeras</title>
       
     
     
@@ -136,7 +136,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Titanic
+                Text Regression
               
             </span>
           
@@ -257,10 +257,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       Getting Started 1.0
@@ -278,7 +280,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorial/overview/" title="Overview" class="md-nav__link">
+    <a href="../overview/" title="Overview" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -290,7 +292,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorial/image_classification/" title="Image Classification" class="md-nav__link">
+    <a href="../image_classification/" title="Image Classification" class="md-nav__link">
       Image Classification
     </a>
   </li>
@@ -302,7 +304,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorial/image_regression/" title="Image Regression" class="md-nav__link">
+    <a href="../image_regression/" title="Image Regression" class="md-nav__link">
       Image Regression
     </a>
   </li>
@@ -314,7 +316,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorial/text_classification/" title="Text Classification" class="md-nav__link">
+    <a href="../text_classification/" title="Text Classification" class="md-nav__link">
       Text Classification
     </a>
   </li>
@@ -324,11 +326,18 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../tutorial/text_regression/" title="Text Regression" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+    <a href="./" title="Text Regression" class="md-nav__link md-nav__link--active">
       Text Regression
     </a>
+    
   </li>
 
         
@@ -338,7 +347,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorial/structured_data_classification/" title="Structured Data Classification" class="md-nav__link">
+    <a href="../structured_data_classification/" title="Structured Data Classification" class="md-nav__link">
       Structured Data Classification
     </a>
   </li>
@@ -350,7 +359,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorial/structured_data_regression/" title="Structured Data Regression" class="md-nav__link">
+    <a href="../structured_data_regression/" title="Structured Data Regression" class="md-nav__link">
       Structured Data Regression
     </a>
   </li>
@@ -362,7 +371,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorial/multi/" title="Multi-Modal and Multi-Task" class="md-nav__link">
+    <a href="../multi/" title="Multi-Modal and Multi-Task" class="md-nav__link">
       Multi-Modal and Multi-Task
     </a>
   </li>
@@ -374,7 +383,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorial/customized/" title="Customized Model" class="md-nav__link">
+    <a href="../customized/" title="Customized Model" class="md-nav__link">
       Customized Model
     </a>
   </li>
@@ -386,7 +395,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorial/export/" title="Export Model" class="md-nav__link">
+    <a href="../export/" title="Export Model" class="md-nav__link">
       Export Model
     </a>
   </li>
@@ -662,17 +671,10 @@
               
                 
                 
-                  <h1>Titanic</h1>
+                  <h1>Text Regression</h1>
                 
-                <div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">from_csv</span><span class="p">():</span>
-    <span class="n">clf</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">StructuredDataClassifier</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">max_trials</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-    <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;tests/fixtures/titanic/train.csv&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;survived&#39;</span><span class="p">,</span> <span class="n">validation_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
-    <span class="n">clf</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;tests/fixtures/titanic/eval.csv&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;survived&#39;</span><span class="p">)</span>
-
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">from_csv</span><span class="p">()</span>
-</pre></div>
+                <p>We are still working on this tutorial.
+Thank you for your patience!</p>
                 
                   
                 
@@ -690,6 +692,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../text_classification/" title="Text Classification" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Text Classification
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../structured_data_classification/" title="Structured Data Classification" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Structured Data Classification
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

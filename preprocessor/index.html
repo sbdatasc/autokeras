@@ -262,10 +262,142 @@
       
 
 
-  <li class="md-nav__item">
-    <a href="../tutorial/" title="Getting Started 1.0" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
       Getting Started 1.0
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Getting Started 1.0
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/overview/" title="Overview" class="md-nav__link">
+      Overview
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/image_classification/" title="Image Classification" class="md-nav__link">
+      Image Classification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/image_regression/" title="Image Regression" class="md-nav__link">
+      Image Regression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/text_classification/" title="Text Classification" class="md-nav__link">
+      Text Classification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/text_regression/" title="Text Regression" class="md-nav__link">
+      Text Regression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/structured_data_classification/" title="Structured Data Classification" class="md-nav__link">
+      Structured Data Classification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/structured_data_regression/" title="Structured Data Regression" class="md-nav__link">
+      Structured Data Regression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/multi/" title="Multi-Modal and Multi-Task" class="md-nav__link">
+      Multi-Modal and Multi-Task
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/customized/" title="Customized Model" class="md-nav__link">
+      Customized Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/export/" title="Export Model" class="md-nav__link">
+      Export Model
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -675,8 +807,9 @@
                 
                 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/preprocessor.py#L724">[source]</a></span></p>
 <h3 id="featureengineering-class">FeatureEngineering class</h3>
-<pre><code class="python">autokeras.FeatureEngineering(max_columns=1000, **kwargs)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">autokeras</span><span class="o">.</span><span class="n">FeatureEngineering</span><span class="p">(</span><span class="n">max_columns</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+
 
 <p>A preprocessor block does feature engineering for the data.</p>
 <p><strong>Arguments</strong></p>
@@ -687,20 +820,21 @@
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/preprocessor.py#L539">[source]</a></span></p>
 <h3 id="imageaugmentation-class">ImageAugmentation class</h3>
-<pre><code class="python">autokeras.ImageAugmentation(
-    percentage=0.25,
-    rotation_range=180,
-    random_crop=True,
-    brightness_range=0.5,
-    saturation_range=0.5,
-    contrast_range=0.5,
-    translation=True,
-    horizontal_flip=True,
-    vertical_flip=True,
-    gaussian_noise=True,
-    **kwargs
-)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">autokeras</span><span class="o">.</span><span class="n">ImageAugmentation</span><span class="p">(</span>
+    <span class="n">percentage</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span>
+    <span class="n">rotation_range</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span>
+    <span class="n">random_crop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">brightness_range</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">saturation_range</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">contrast_range</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">translation</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">horizontal_flip</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">vertical_flip</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">gaussian_noise</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span>
+<span class="p">)</span>
+</pre></div>
+
 
 <p>Collection of various image augmentation methods.</p>
 <p><strong>Arguments</strong></p>
@@ -729,8 +863,9 @@
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/preprocessor.py#L488">[source]</a></span></p>
 <h3 id="lightgbm-class">LightGBM class</h3>
-<pre><code class="python">autokeras.LightGBM(seed=None, **kwargs)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">autokeras</span><span class="o">.</span><span class="n">LightGBM</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+
 
 <p>LightGBM Block for classification or regression task.</p>
 <p><strong>Arguments</strong></p>
@@ -740,8 +875,9 @@
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/preprocessor.py#L20">[source]</a></span></p>
 <h3 id="normalization-class">Normalization class</h3>
-<pre><code class="python">autokeras.Normalization(**kwargs)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">autokeras</span><span class="o">.</span><span class="n">Normalization</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+
 
 <p>Perform basic image transformation and augmentation.</p>
 <p><strong>Arguments</strong></p>
@@ -752,15 +888,17 @@
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/preprocessor.py#L90">[source]</a></span></p>
 <h3 id="texttointsequence-class">TextToIntSequence class</h3>
-<pre><code class="python">autokeras.TextToIntSequence(max_len=None, **kwargs)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">autokeras</span><span class="o">.</span><span class="n">TextToIntSequence</span><span class="p">(</span><span class="n">max_len</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+
 
 <p>Convert raw texts to sequences of word indices.</p>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/preprocessor.py#L149">[source]</a></span></p>
 <h3 id="texttongramvector-class">TextToNgramVector class</h3>
-<pre><code class="python">autokeras.TextToNgramVector(ngram_range=None, stop_words=None, max_features=20000, norm=&quot;l2&quot;, **kwargs)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">autokeras</span><span class="o">.</span><span class="n">TextToNgramVector</span><span class="p">(</span><span class="n">ngram_range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">stop_words</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_features</span><span class="o">=</span><span class="mi">20000</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="s2">&quot;l2&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+
 
 <p>Convert raw texts to n-gram vectors.</p>
 <p><strong>Arguments</strong></p>

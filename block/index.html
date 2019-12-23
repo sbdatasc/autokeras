@@ -262,10 +262,142 @@
       
 
 
-  <li class="md-nav__item">
-    <a href="../tutorial/" title="Getting Started 1.0" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
       Getting Started 1.0
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Getting Started 1.0
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/overview/" title="Overview" class="md-nav__link">
+      Overview
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/image_classification/" title="Image Classification" class="md-nav__link">
+      Image Classification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/image_regression/" title="Image Regression" class="md-nav__link">
+      Image Regression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/text_classification/" title="Text Classification" class="md-nav__link">
+      Text Classification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/text_regression/" title="Text Regression" class="md-nav__link">
+      Text Regression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/structured_data_classification/" title="Structured Data Classification" class="md-nav__link">
+      Structured Data Classification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/structured_data_regression/" title="Structured Data Regression" class="md-nav__link">
+      Structured Data Regression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/multi/" title="Multi-Modal and Multi-Task" class="md-nav__link">
+      Multi-Modal and Multi-Task
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/customized/" title="Customized Model" class="md-nav__link">
+      Customized Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/export/" title="Export Model" class="md-nav__link">
+      Export Model
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -759,8 +891,9 @@
                 
                 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/block.py#L151">[source]</a></span></p>
 <h3 id="convblock-class">ConvBlock class</h3>
-<pre><code class="python">autokeras.ConvBlock(kernel_size=None, num_blocks=None, separable=None, **kwargs)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">autokeras</span><span class="o">.</span><span class="n">ConvBlock</span><span class="p">(</span><span class="n">kernel_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">num_blocks</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">separable</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+
 
 <p>Block for vanilla ConvNets.</p>
 <p><strong>Arguments</strong></p>
@@ -774,8 +907,9 @@
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/block.py#L15">[source]</a></span></p>
 <h3 id="denseblock-class">DenseBlock class</h3>
-<pre><code class="python">autokeras.DenseBlock(num_layers=None, use_batchnorm=None, dropout_rate=None, **kwargs)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">autokeras</span><span class="o">.</span><span class="n">DenseBlock</span><span class="p">(</span><span class="n">num_layers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">use_batchnorm</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dropout_rate</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+
 
 <p>Block for Dense layers.</p>
 <p><strong>Arguments</strong></p>
@@ -790,10 +924,11 @@
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/block.py#L483">[source]</a></span></p>
 <h3 id="embeddingblock-class">EmbeddingBlock class</h3>
-<pre><code class="python">autokeras.EmbeddingBlock(
-    max_features=None, pretraining=None, embedding_dim=None, dropout_rate=None, **kwargs
-)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">autokeras</span><span class="o">.</span><span class="n">EmbeddingBlock</span><span class="p">(</span>
+    <span class="n">max_features</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pretraining</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">embedding_dim</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dropout_rate</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+<span class="p">)</span>
+</pre></div>
+
 
 <p>Word embedding block for sequences.</p>
 <p>The input should be tokenized sequences with the same length, where each element
@@ -813,8 +948,9 @@ of a sequence should be the index of the word.</p>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/block.py#L340">[source]</a></span></p>
 <h3 id="merge-class">Merge class</h3>
-<pre><code class="python">autokeras.Merge(merge_type=None, **kwargs)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">autokeras</span><span class="o">.</span><span class="n">Merge</span><span class="p">(</span><span class="n">merge_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+
 
 <p>Merge block to merge multiple nodes into one.</p>
 <p><strong>Arguments</strong></p>
@@ -825,8 +961,9 @@ of a sequence should be the index of the word.</p>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/block.py#L230">[source]</a></span></p>
 <h3 id="resnetblock-class">ResNetBlock class</h3>
-<pre><code class="python">autokeras.ResNetBlock(version=None, pooling=None, **kwargs)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">autokeras</span><span class="o">.</span><span class="n">ResNetBlock</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pooling</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+
 
 <p>Block for ResNet.</p>
 <p><strong>Arguments</strong></p>
@@ -839,10 +976,11 @@ of a sequence should be the index of the word.</p>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/block.py#L73">[source]</a></span></p>
 <h3 id="rnnblock-class">RNNBlock class</h3>
-<pre><code class="python">autokeras.RNNBlock(
-    return_sequences=False, bidirectional=None, num_layers=None, layer_type=None, **kwargs
-)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">autokeras</span><span class="o">.</span><span class="n">RNNBlock</span><span class="p">(</span>
+    <span class="n">return_sequences</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">bidirectional</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">num_layers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">layer_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+<span class="p">)</span>
+</pre></div>
+
 
 <p>An RNN Block.</p>
 <p><strong>Arguments</strong></p>
@@ -859,8 +997,9 @@ of a sequence should be the index of the word.</p>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/block.py#L395">[source]</a></span></p>
 <h3 id="spatialreduction-class">SpatialReduction class</h3>
-<pre><code class="python">autokeras.SpatialReduction(reduction_type=None, **kwargs)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">autokeras</span><span class="o">.</span><span class="n">SpatialReduction</span><span class="p">(</span><span class="n">reduction_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+
 
 <p>Reduce the dimension of a spatial tensor, e.g. image, to a vector.</p>
 <p><strong>Arguments</strong></p>
@@ -871,8 +1010,9 @@ of a sequence should be the index of the word.</p>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/block.py#L438">[source]</a></span></p>
 <h3 id="temporalreduction-class">TemporalReduction class</h3>
-<pre><code class="python">autokeras.TemporalReduction(reduction_type=None, **kwargs)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">autokeras</span><span class="o">.</span><span class="n">TemporalReduction</span><span class="p">(</span><span class="n">reduction_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+
 
 <p>Reduce the dimension of a temporal tensor, e.g. output of RNN, to a vector.</p>
 <p><strong>Arguments</strong></p>
@@ -883,10 +1023,11 @@ of a sequence should be the index of the word.</p>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/block.py#L269">[source]</a></span></p>
 <h3 id="xceptionblock-class">XceptionBlock class</h3>
-<pre><code class="python">autokeras.XceptionBlock(
-    activation=None, initial_strides=None, num_residual_blocks=None, pooling=None, **kwargs
-)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">autokeras</span><span class="o">.</span><span class="n">XceptionBlock</span><span class="p">(</span>
+    <span class="n">activation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">initial_strides</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">num_residual_blocks</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pooling</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+<span class="p">)</span>
+</pre></div>
+
 
 <p>XceptionBlock.</p>
 <p>An Xception structure, used for specifying your model with specific datasets.</p>
@@ -910,8 +1051,9 @@ architecture with a half, an identical, or a double size of the original one.</p
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/hyperblock.py#L9">[source]</a></span></p>
 <h3 id="imageblock-class">ImageBlock class</h3>
-<pre><code class="python">autokeras.ImageBlock(block_type=None, normalize=None, augment=None, seed=None, **kwargs)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">autokeras</span><span class="o">.</span><span class="n">ImageBlock</span><span class="p">(</span><span class="n">block_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">augment</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+
 
 <p>Block for image data.</p>
 <p>The image blocks is a block choosing from ResNetBlock, XceptionBlock, ConvBlock,
@@ -928,8 +1070,9 @@ which is controlled by a hyperparameter, 'block_type'.</p>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/hyperblock.py#L117">[source]</a></span></p>
 <h3 id="structureddatablock-class">StructuredDataBlock class</h3>
-<pre><code class="python">autokeras.StructuredDataBlock(feature_engineering=True, module_type=None, seed=None, **kwargs)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">autokeras</span><span class="o">.</span><span class="n">StructuredDataBlock</span><span class="p">(</span><span class="n">feature_engineering</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">module_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+
 
 <p>Block for structured data.</p>
 <p><strong>Arguments</strong></p>
@@ -944,8 +1087,9 @@ which is controlled by a hyperparameter, 'block_type'.</p>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/hyperblock.py#L74">[source]</a></span></p>
 <h3 id="textblock-class">TextBlock class</h3>
-<pre><code class="python">autokeras.TextBlock(vectorizer=None, pretraining=None, **kwargs)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">autokeras</span><span class="o">.</span><span class="n">TextBlock</span><span class="p">(</span><span class="n">vectorizer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pretraining</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+
 
 <p>Block for text data.</p>
 <p><strong>Arguments</strong></p>

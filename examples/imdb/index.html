@@ -258,10 +258,142 @@
       
 
 
-  <li class="md-nav__item">
-    <a href="../../tutorial/" title="Getting Started 1.0" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
       Getting Started 1.0
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Getting Started 1.0
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/overview/" title="Overview" class="md-nav__link">
+      Overview
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/image_classification/" title="Image Classification" class="md-nav__link">
+      Image Classification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/image_regression/" title="Image Regression" class="md-nav__link">
+      Image Regression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/text_classification/" title="Text Classification" class="md-nav__link">
+      Text Classification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/text_regression/" title="Text Regression" class="md-nav__link">
+      Text Regression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/structured_data_classification/" title="Structured Data Classification" class="md-nav__link">
+      Structured Data Classification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/structured_data_regression/" title="Structured Data Regression" class="md-nav__link">
+      Structured Data Regression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/multi/" title="Multi-Modal and Multi-Task" class="md-nav__link">
+      Multi-Modal and Multi-Task
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/customized/" title="Customized Model" class="md-nav__link">
+      Customized Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/export/" title="Export Model" class="md-nav__link">
+      Export Model
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -532,73 +664,73 @@
                 
                   <h1>Imdb</h1>
                 
-                <pre><code class="python">import tensorflow as tf
+                <div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
 
-import autokeras as ak
-
-
-def imdb_raw():
-    max_features = 20000
-    index_offset = 3  # word index offset
-
-    (x_train, y_train), (x_test, y_test) = tf.keras.datasets.imdb.load_data(
-        num_words=max_features,
-        index_from=index_offset)
-    x_train = x_train
-    y_train = y_train.reshape(-1, 1)
-    x_test = x_test
-    y_test = y_test.reshape(-1, 1)
-
-    word_to_id = tf.keras.datasets.imdb.get_word_index()
-    word_to_id = {k: (v + index_offset) for k, v in word_to_id.items()}
-    word_to_id[&quot;&lt;PAD&gt;&quot;] = 0
-    word_to_id[&quot;&lt;START&gt;&quot;] = 1
-    word_to_id[&quot;&lt;UNK&gt;&quot;] = 2
-
-    id_to_word = {value: key for key, value in word_to_id.items()}
-    x_train = list(map(lambda sentence: ' '.join(
-        id_to_word[i] for i in sentence), x_train))
-    x_test = list(map(lambda sentence: ' '.join(
-        id_to_word[i] for i in sentence), x_test))
-    x_train = np.array(x_train, dtype=np.str)
-    x_test = np.array(x_test, dtype=np.str)
-    return (x_train, y_train), (x_test, y_test)
+<span class="kn">import</span> <span class="nn">autokeras</span> <span class="k">as</span> <span class="nn">ak</span>
 
 
-def task_api():
-    (x_train, y_train), (x_test, y_test) = imdb_raw()
-    clf = ak.TextClassifier(max_trials=3, seed=5)
-    clf.fit(x_train, y_train, validation_split=0.2)
-    return clf.evaluate(x_test, y_test)
+<span class="k">def</span> <span class="nf">imdb_raw</span><span class="p">():</span>
+    <span class="n">max_features</span> <span class="o">=</span> <span class="mi">20000</span>
+    <span class="n">index_offset</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1"># word index offset</span>
+
+    <span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">),</span> <span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">imdb</span><span class="o">.</span><span class="n">load_data</span><span class="p">(</span>
+        <span class="n">num_words</span><span class="o">=</span><span class="n">max_features</span><span class="p">,</span>
+        <span class="n">index_from</span><span class="o">=</span><span class="n">index_offset</span><span class="p">)</span>
+    <span class="n">x_train</span> <span class="o">=</span> <span class="n">x_train</span>
+    <span class="n">y_train</span> <span class="o">=</span> <span class="n">y_train</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">x_test</span> <span class="o">=</span> <span class="n">x_test</span>
+    <span class="n">y_test</span> <span class="o">=</span> <span class="n">y_test</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">word_to_id</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">imdb</span><span class="o">.</span><span class="n">get_word_index</span><span class="p">()</span>
+    <span class="n">word_to_id</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="p">(</span><span class="n">v</span> <span class="o">+</span> <span class="n">index_offset</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">word_to_id</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+    <span class="n">word_to_id</span><span class="p">[</span><span class="s2">&quot;&lt;PAD&gt;&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">word_to_id</span><span class="p">[</span><span class="s2">&quot;&lt;START&gt;&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">word_to_id</span><span class="p">[</span><span class="s2">&quot;&lt;UNK&gt;&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+
+    <span class="n">id_to_word</span> <span class="o">=</span> <span class="p">{</span><span class="n">value</span><span class="p">:</span> <span class="n">key</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">word_to_id</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+    <span class="n">x_train</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">sentence</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="n">id_to_word</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">sentence</span><span class="p">),</span> <span class="n">x_train</span><span class="p">))</span>
+    <span class="n">x_test</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">sentence</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="n">id_to_word</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">sentence</span><span class="p">),</span> <span class="n">x_test</span><span class="p">))</span>
+    <span class="n">x_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">str</span><span class="p">)</span>
+    <span class="n">x_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">str</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">),</span> <span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
 
 
-def functional_api():
-    max_features = 20000
-    max_words = 400
-    (x_train, y_train), (x_test, y_test) = tf.keras.datasets.imdb.load_data(
-        num_words=max_features,
-        index_from=3)
-    x_train = tf.keras.preprocessing.sequence.pad_sequences(
-        x_train, maxlen=max_words)
-    x_test = tf.keras.preprocessing.sequence.pad_sequences(x_test, maxlen=max_words)
-    print(x_train.dtype)
-    print(x_train[:10])
-    input_node = ak.Input()
-    output_node = input_node
-    output_node = ak.EmbeddingBlock(max_features=max_features)(output_node)
-    output_node = ak.ConvBlock()(output_node)
-    output_node = ak.SpatialReduction()(output_node)
-    output_node = ak.DenseBlock()(output_node)
-    output_node = ak.ClassificationHead()(output_node)
-    clf = ak.AutoModel(input_node, output_node, seed=5, max_trials=3)
-    clf.fit(x_train, y_train, validation_split=0.2)
-    return clf.evaluate(x_test, y_test)
+<span class="k">def</span> <span class="nf">task_api</span><span class="p">():</span>
+    <span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">),</span> <span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span> <span class="o">=</span> <span class="n">imdb_raw</span><span class="p">()</span>
+    <span class="n">clf</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">TextClassifier</span><span class="p">(</span><span class="n">max_trials</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">validation_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">clf</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
 
 
-if __name__ == '__main__':
-    task_api()
-    # functional_api()
-</code></pre>
+<span class="k">def</span> <span class="nf">functional_api</span><span class="p">():</span>
+    <span class="n">max_features</span> <span class="o">=</span> <span class="mi">20000</span>
+    <span class="n">max_words</span> <span class="o">=</span> <span class="mi">400</span>
+    <span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">),</span> <span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">imdb</span><span class="o">.</span><span class="n">load_data</span><span class="p">(</span>
+        <span class="n">num_words</span><span class="o">=</span><span class="n">max_features</span><span class="p">,</span>
+        <span class="n">index_from</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">x_train</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">sequence</span><span class="o">.</span><span class="n">pad_sequences</span><span class="p">(</span>
+        <span class="n">x_train</span><span class="p">,</span> <span class="n">maxlen</span><span class="o">=</span><span class="n">max_words</span><span class="p">)</span>
+    <span class="n">x_test</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">sequence</span><span class="o">.</span><span class="n">pad_sequences</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">maxlen</span><span class="o">=</span><span class="n">max_words</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x_train</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x_train</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>
+    <span class="n">input_node</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">Input</span><span class="p">()</span>
+    <span class="n">output_node</span> <span class="o">=</span> <span class="n">input_node</span>
+    <span class="n">output_node</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">EmbeddingBlock</span><span class="p">(</span><span class="n">max_features</span><span class="o">=</span><span class="n">max_features</span><span class="p">)(</span><span class="n">output_node</span><span class="p">)</span>
+    <span class="n">output_node</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">ConvBlock</span><span class="p">()(</span><span class="n">output_node</span><span class="p">)</span>
+    <span class="n">output_node</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">SpatialReduction</span><span class="p">()(</span><span class="n">output_node</span><span class="p">)</span>
+    <span class="n">output_node</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">DenseBlock</span><span class="p">()(</span><span class="n">output_node</span><span class="p">)</span>
+    <span class="n">output_node</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">ClassificationHead</span><span class="p">()(</span><span class="n">output_node</span><span class="p">)</span>
+    <span class="n">clf</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">AutoModel</span><span class="p">(</span><span class="n">input_node</span><span class="p">,</span> <span class="n">output_node</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">max_trials</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">validation_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">clf</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">task_api</span><span class="p">()</span>
+    <span class="c1"># functional_api()</span>
+</pre></div>
                 
                   
                 

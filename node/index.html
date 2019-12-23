@@ -262,10 +262,142 @@
       
 
 
-  <li class="md-nav__item">
-    <a href="../tutorial/" title="Getting Started 1.0" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
       Getting Started 1.0
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Getting Started 1.0
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/overview/" title="Overview" class="md-nav__link">
+      Overview
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/image_classification/" title="Image Classification" class="md-nav__link">
+      Image Classification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/image_regression/" title="Image Regression" class="md-nav__link">
+      Image Regression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/text_classification/" title="Text Classification" class="md-nav__link">
+      Text Classification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/text_regression/" title="Text Regression" class="md-nav__link">
+      Text Regression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/structured_data_classification/" title="Structured Data Classification" class="md-nav__link">
+      Structured Data Classification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/structured_data_regression/" title="Structured Data Regression" class="md-nav__link">
+      Structured Data Regression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/multi/" title="Multi-Modal and Multi-Task" class="md-nav__link">
+      Multi-Modal and Multi-Task
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/customized/" title="Customized Model" class="md-nav__link">
+      Customized Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/export/" title="Export Model" class="md-nav__link">
+      Export Model
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -647,8 +779,9 @@
                 
                 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/node.py#L51">[source]</a></span></p>
 <h3 id="imageinput-class">ImageInput class</h3>
-<pre><code class="python">autokeras.ImageInput(shape=None)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">autokeras</span><span class="o">.</span><span class="n">ImageInput</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+
 
 <p>Input node for image data.</p>
 <p>The input data should be numpy.ndarray or tf.data.Dataset. The shape of the data
@@ -657,16 +790,18 @@ dimension.</p>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/node.py#L14">[source]</a></span></p>
 <h3 id="input-class">Input class</h3>
-<pre><code class="python">autokeras.Input(shape=None)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">autokeras</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+
 
 <p>Input node for tensor data.</p>
 <p>The data should be numpy.ndarray or tf.data.Dataset.</p>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/node.py#L108">[source]</a></span></p>
 <h3 id="structureddatainput-class">StructuredDataInput class</h3>
-<pre><code class="python">autokeras.StructuredDataInput(column_names=None, column_types=None, **kwargs)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">autokeras</span><span class="o">.</span><span class="n">StructuredDataInput</span><span class="p">(</span><span class="n">column_names</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">column_types</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+
 
 <p>Input node for structured data.</p>
 <p>The input data should be numpy.ndarray, pandas.DataFrame or tensorflow.Dataset.
@@ -687,8 +822,9 @@ The data should be two-dimensional with numerical or categorical values.</p>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/node.py#L79">[source]</a></span></p>
 <h3 id="textinput-class">TextInput class</h3>
-<pre><code class="python">autokeras.TextInput(shape=None)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">autokeras</span><span class="o">.</span><span class="n">TextInput</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+
 
 <p>Input node for text data.</p>
 <p>The input data should be numpy.ndarray or tf.data.Dataset. The data should be one

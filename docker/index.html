@@ -262,10 +262,142 @@
       
 
 
-  <li class="md-nav__item">
-    <a href="../tutorial/" title="Getting Started 1.0" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
       Getting Started 1.0
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Getting Started 1.0
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/overview/" title="Overview" class="md-nav__link">
+      Overview
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/image_classification/" title="Image Classification" class="md-nav__link">
+      Image Classification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/image_regression/" title="Image Regression" class="md-nav__link">
+      Image Regression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/text_classification/" title="Text Classification" class="md-nav__link">
+      Text Classification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/text_regression/" title="Text Regression" class="md-nav__link">
+      Text Regression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/structured_data_classification/" title="Structured Data Classification" class="md-nav__link">
+      Structured Data Classification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/structured_data_regression/" title="Structured Data Regression" class="md-nav__link">
+      Structured Data Regression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/multi/" title="Multi-Modal and Multi-Task" class="md-nav__link">
+      Multi-Modal and Multi-Task
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/customized/" title="Customized Model" class="md-nav__link">
+      Customized Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/export/" title="Export Model" class="md-nav__link">
+      Export Model
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -648,8 +780,9 @@
                 <h1 id="auto-keras-docker">Auto-Keras Docker</h1>
 <h2 id="download-auto-keras-docker-image">Download Auto-Keras Docker image</h2>
 <p>The following command download Auto-Keras docker image to your machine.  </p>
-<pre><code>docker pull garawalid/autokeras:latest
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="err">docker pull garawalid/autokeras:latest</span>
+</pre></div>
+
 
 <p>Image releases are tagged using the following format:</p>
 <table>
@@ -671,24 +804,27 @@
 </tbody>
 </table>
 <h2 id="start-auto-keras-docker-container">Start Auto-Keras Docker container</h2>
-<pre><code>docker run -it --shm-size 2G garawalid/autokeras /bin/bash
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="err">docker run -it --shm-size 2G garawalid/autokeras /bin/bash</span>
+</pre></div>
+
 
 <p>In case you need more memory to run the container, change the value of <code>shm-size</code>. (<a href="https://docs.docker.com/engine/reference/run/#general-form">Docker run reference</a>)</p>
 <h2 id="run-application">Run application :</h2>
 <p>To run a local script <code>file.py</code> using Auto-Keras within the container, mount the host directory <code>-v hostDir:/app</code>.</p>
-<pre><code>docker run -it -v hostDir:/app --shm-size 2G garawalid/autokeras python file.py
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="err">docker run -it -v hostDir:/app --shm-size 2G garawalid/autokeras python file.py</span>
+</pre></div>
+
 
 <h2 id="example">Example :</h2>
 <p>Let's download the mnist example and run it within the container.  </p>
 <p>Download the example :  </p>
-<pre><code>curl https://raw.githubusercontent.com/keras-team/autokeras/master/examples/mnist.py --output mnist.py
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="err">curl https://raw.githubusercontent.com/keras-team/autokeras/master/examples/mnist.py --output mnist.py</span>
+</pre></div>
+
 
 <p>Run the mnist example :</p>
-<pre><code>docker run -it -v &quot;$(pwd)&quot;:/app --shm-size 2G garawalid/autokeras python mnist.py
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="err">docker run -it -v &quot;$(pwd)&quot;:/app --shm-size 2G garawalid/autokeras python mnist.py</span>
+</pre></div>
                 
                   
                 
