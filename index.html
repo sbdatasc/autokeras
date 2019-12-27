@@ -842,15 +842,15 @@ AutoKeras provides functions to automatically search for architecture and hyperp
 <h1 id="autokeras-10-is-coming-soon">AutoKeras 1.0 is coming soon!</h1>
 <h2 id="installation">Installation</h2>
 <p>To install the package, please use the <code>pip</code> installation as follows:</p>
-<div class="codehilite"><pre><span></span><span class="err">pip3 install autokeras # for 0.4 version</span>
-<span class="err">pip3 install autokeras==1.0.0b0 # for 1.0 version</span>
+<div class="codehilite"><pre><span></span>pip3 install autokeras <span class="c1"># for 0.4 version</span>
+pip3 install <span class="nv">autokeras</span><span class="o">==</span><span class="m">1</span>.0.0b0 <span class="c1"># for 1.0 version</span>
 </pre></div>
 
 
 <p><strong>Note:</strong> currently, AutoKeras is only compatible with: <strong>Python 3</strong>.</p>
 <h2 id="example">Example</h2>
 <p>Here is a short example of using the package.</p>
-<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">autokeras</span> <span class="k">as</span> <span class="nn">ak</span>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">autokeras</span> <span class="kn">as</span> <span class="nn">ak</span>
 
 <span class="n">clf</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">ImageClassifier</span><span class="p">()</span>
 <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
@@ -862,14 +862,14 @@ AutoKeras provides functions to automatically search for architecture and hyperp
 <h2 id="cite-this-work">Cite this work</h2>
 <p>Haifeng Jin, Qingquan Song, and Xia Hu. "Auto-keras: An efficient neural architecture search system." Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery &amp; Data Mining. ACM, 2019. (<a href="https://www.kdd.org/kdd2019/accepted-papers/view/auto-keras-an-efficient-neural-architecture-search-system">Download</a>)</p>
 <p>Biblatex entry:</p>
-<div class="codehilite"><pre><span></span><span class="err">@inproceedings{jin2019auto,</span>
-<span class="err">  title={Auto-Keras: An Efficient Neural Architecture Search System},</span>
-<span class="err">  author={Jin, Haifeng and Song, Qingquan and Hu, Xia},</span>
-<span class="err">  booktitle={Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery \&amp; Data Mining},</span>
-<span class="err">  pages={1946--1956},</span>
-<span class="err">  year={2019},</span>
-<span class="err">  organization={ACM}</span>
-<span class="err">}</span>
+<div class="codehilite"><pre><span></span><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">jin2019auto</span><span class="p">,</span>
+  <span class="na">title</span><span class="p">=</span><span class="s">{Auto-Keras: An Efficient Neural Architecture Search System}</span><span class="p">,</span>
+  <span class="na">author</span><span class="p">=</span><span class="s">{Jin, Haifeng and Song, Qingquan and Hu, Xia}</span><span class="p">,</span>
+  <span class="na">booktitle</span><span class="p">=</span><span class="s">{Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery \&amp; Data Mining}</span><span class="p">,</span>
+  <span class="na">pages</span><span class="p">=</span><span class="s">{1946--1956}</span><span class="p">,</span>
+  <span class="na">year</span><span class="p">=</span><span class="s">{2019}</span><span class="p">,</span>
+  <span class="na">organization</span><span class="p">=</span><span class="s">{ACM}</span>
+<span class="p">}</span>
 </pre></div>
 
 
