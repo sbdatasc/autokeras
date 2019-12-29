@@ -822,16 +822,13 @@ Replace all the <code>/path/to</code> with the path to the csv files.</p>
 <p>The AutoKeras StructuredDataClassifier is quite flexible for the data format.</p>
 <p>The example above shows how to use the CSV files directly. Besides CSV files, it also
 supports numpy.ndarray, pandas.DataFrame or <a href="https://www.tensorflow.org/api_docs/python/tf/data/Dataset?version=stable">tf.data.Dataset</a>. The data should be
-two-dimensional with numerical or categorical values. For the classification labels,
+two-dimensional with numerical or categorical values.</p>
+<p>For the classification labels,
 AutoKeras accepts both plain labels, i.e.  strings or integers, and one-hot encoded
 encoded labels, i.e. vectors of 0s and 1s.
-The labels can be numpy.ndarray, pandas.DataFrame, or pandas.Series.
-The following examples show how the data can be prepared with numpy.ndarray,
-pandas.DataFrame, and tensorflow.data.Dataset.
-Notably, the labels have to be one-hot encoded for multi-class
-classification to be wrapped into tensorflow Dataset.
-Since the Titanic dataset is binary
-classification, it should not be one-hot encoded.</p>
+The labels can be numpy.ndarray, pandas.DataFrame, or pandas.Series.</p>
+<p>The following examples show how the data can be prepared with numpy.ndarray,
+pandas.DataFrame, and tensorflow.data.Dataset.</p>
 <div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="c1"># x_train as pandas.DataFrame, y_train as pandas.Series</span>
 <span class="n">x_train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;train.csv&#39;</span><span class="p">)</span>
@@ -864,7 +861,11 @@ classification, it should not be one-hot encoded.</p>
 </pre></div>
 
 
-<p>Convert numpy.ndarray to tf.data.Dataset.</p>
+<p>The following code shows how to convert numpy.ndarray to tf.data.Dataset.
+Notably, the labels have to be one-hot encoded for multi-class
+classification to be wrapped into tensorflow Dataset.
+Since the Titanic dataset is binary
+classification, it should not be one-hot encoded.</p>
 <div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
 <span class="n">train_set</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">from_tensor_slices</span><span class="p">(((</span><span class="n">x_train</span><span class="p">,</span> <span class="p">),</span> <span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="p">)))</span>
 <span class="n">test_set</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">from_tensor_slices</span><span class="p">(((</span><span class="n">x_test</span><span class="p">,</span> <span class="p">),</span> <span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="p">)))</span>
