@@ -795,7 +795,9 @@
                 
                 <h1 id="image-classification">Image Classification</h1>
 <h2 id="a-simple-example">A Simple Example</h2>
-<p>The first step is to prepare your data. Here we use MNIST dataset as an example.</p>
+<p>The first step is to prepare your data. Here we use the <a href="https://keras.io/datasets/#mnist-database-of-handwritten-digits">MNIST
+dataset</a> as an
+example.</p>
 <div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">tensorflow.keras.datasets</span> <span class="kn">import</span> <span class="n">mnist</span>
 <span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">),</span> <span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span> <span class="o">=</span> <span class="n">mnist</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x_train</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="c1"># (60000, 28, 28)</span>
@@ -847,7 +849,7 @@ instead of splitting it from the training data with <code>validation_data</code>
 <a href="/auto_model/#automodel-class">AutoModel</a> instead of
 <a href="/image_classifier">ImageClassifier</a>. You can configure the
 <a href="/block/#imageblock-class">ImageBlock</a> for some high-level configurations,
-<code>block_type</code> for the type of neural network to search, <code>normalize</code> for whether to do
+e.g., <code>block_type</code> for the type of neural network to search, <code>normalize</code> for whether to do
 data normalization, <code>augment</code> for whether to do data augmentation. You can also
 do not specify these arguments, which would leave the different choices to be
 tuned automatically.
@@ -920,9 +922,9 @@ work.</p>
 
 
 <p>We also support using <a href="https://www.tensorflow.org/api_docs/python/tf/data/Dataset?version=stable">tf.data.Dataset</a> format for
-the training data. In this case, the images would have to be 3-dimentional. The
-labels have to be one-hot encoded.  So you can wrap the prepared reshaped and one-hot
-encoded data above into tensorflow Dataset as follows.</p>
+the training data. In this case, the images would have to be 3-dimentional.
+The labels have to be one-hot encoded for multi-class
+classification to be wrapped into tensorflow Dataset.</p>
 <div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
 <span class="n">train_set</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">from_tensor_slices</span><span class="p">(((</span><span class="n">x_train</span><span class="p">,</span> <span class="p">),</span> <span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="p">)))</span>
 <span class="n">test_set</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">from_tensor_slices</span><span class="p">(((</span><span class="n">x_test</span><span class="p">,</span> <span class="p">),</span> <span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="p">)))</span>

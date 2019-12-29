@@ -795,11 +795,13 @@
                 
                 <h1 id="text-classification">Text Classification</h1>
 <h2 id="a-simple-example">A Simple Example</h2>
-<p>The first step is to prepare your data. Here we use IMDB dataset as an example.</p>
+<p>The first step is to prepare your data. Here we use the <a href="https://keras.io/datasets/#imdb-movie-reviews-sentiment-classification">IMDB
+dataset</a> as
+an example.</p>
 <div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">tensorflow.keras.datasets</span> <span class="kn">import</span> <span class="n">imdb</span>
 
-<span class="c1"># Load the integer sequence IMDB dataset with Keras.</span>
+<span class="c1"># Load the integer sequence the IMDB dataset with Keras.</span>
 <span class="n">index_offset</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1"># word index offset</span>
 <span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">),</span> <span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span> <span class="o">=</span> <span class="n">imdb</span><span class="o">.</span><span class="n">load_data</span><span class="p">(</span><span class="n">num_words</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
                                                       <span class="n">index_from</span><span class="o">=</span><span class="n">index_offset</span><span class="p">)</span>
@@ -867,7 +869,7 @@ instead of splitting it from the training data with <code>validation_data</code>
 <p>For advanced users, you may customize your search space by using
 <a href="/auto_model/#automodel-class">AutoModel</a> instead of
 <a href="/text_classifier">TextClassifier</a>. You can configure the
-<a href="/block/#textblock-class">TextBlock</a> for some high-level configurations, <code>vectorizer</code>
+<a href="/block/#textblock-class">TextBlock</a> for some high-level configurations, e.g., <code>vectorizer</code>
 for the type of text vectorization method to use.  You can use 'sequence', which uses
 <a href="/preprocessor/#texttointsequence-class">TextToInteSequence</a> to convert the words to
 integers and use <a href="/block/#embeddingblock-class">EmbeddingBlock</a> for embedding the
@@ -895,10 +897,10 @@ further. See the following example.</p>
 <div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">autokeras</span> <span class="k">as</span> <span class="nn">ak</span>
 
 <span class="n">input_node</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">TextInput</span><span class="p">()</span>
-<span class="n">output_node</span> <span class="o">=</span> <span class="n">preprocessor_module</span><span class="o">.</span><span class="n">TextToIntSequence</span><span class="p">()(</span><span class="n">input_node</span><span class="p">)</span>
-<span class="n">output_node</span> <span class="o">=</span> <span class="n">block_module</span><span class="o">.</span><span class="n">EmbeddingBlock</span><span class="p">()(</span><span class="n">output_node</span><span class="p">)</span>
+<span class="n">output_node</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">TextToIntSequence</span><span class="p">()(</span><span class="n">input_node</span><span class="p">)</span>
+<span class="n">output_node</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">EmbeddingBlock</span><span class="p">()(</span><span class="n">output_node</span><span class="p">)</span>
 <span class="c1"># Use separable Conv layers in Keras.</span>
-<span class="n">output_node</span> <span class="o">=</span> <span class="n">block_module</span><span class="o">.</span><span class="n">ConvBlock</span><span class="p">(</span><span class="n">separable</span><span class="o">=</span><span class="kc">True</span><span class="p">)(</span><span class="n">output_node</span><span class="p">)</span>
+<span class="n">output_node</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">ConvBlock</span><span class="p">(</span><span class="n">separable</span><span class="o">=</span><span class="kc">True</span><span class="p">)(</span><span class="n">output_node</span><span class="p">)</span>
 <span class="n">output_node</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">ClassificationHead</span><span class="p">()(</span><span class="n">output_node</span><span class="p">)</span>
 <span class="n">clf</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">AutoModel</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="n">input_node</span><span class="p">,</span> <span class="n">outputs</span><span class="o">=</span><span class="n">output_node</span><span class="p">,</span> <span class="n">max_trials</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
@@ -909,11 +911,12 @@ further. See the following example.</p>
 <p>The AutoKeras TextClassifier is quite flexible for the data format.</p>
 <p>For the text, the input data should be one-dimensional 
 For the classification labels, AutoKeras accepts both plain labels, i.e. strings or
-integers, and one-hot encoded encoded labels, i.e. vectors of 0s and 1s.
-Since IMDB dataset is binary classification, it should not be one-hot encoded.</p>
+integers, and one-hot encoded encoded labels, i.e. vectors of 0s and 1s.</p>
 <p>We also support using <a href="https://www.tensorflow.org/api_docs/python/tf/data/Dataset?version=stable">tf.data.Dataset</a> format for
-the training data. The labels have to be one-hot encoded.  So you can wrap the data
-above into tensorflow Dataset as follows.</p>
+the training data.
+The labels have to be one-hot encoded for multi-class
+classification to be wrapped into tensorflow Dataset.
+Since the IMDB dataset is binary classification, it should not be one-hot encoded.</p>
 <div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
 <span class="n">train_set</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">from_tensor_slices</span><span class="p">(((</span><span class="n">x_train</span><span class="p">,</span> <span class="p">),</span> <span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="p">)))</span>
 <span class="n">test_set</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">from_tensor_slices</span><span class="p">(((</span><span class="n">x_test</span><span class="p">,</span> <span class="p">),</span> <span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="p">)))</span>

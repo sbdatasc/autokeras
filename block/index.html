@@ -1070,7 +1070,7 @@ which is controlled by a hyperparameter, 'block_type'.</p>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/hyperblock.py#L116">[source]</a></span></p>
 <h3 id="structureddatablock-class">StructuredDataBlock class</h3>
-<div class="codehilite"><pre><span></span><span class="n">autokeras</span><span class="o">.</span><span class="n">StructuredDataBlock</span><span class="p">(</span><span class="n">feature_engineering</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">module_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">autokeras</span><span class="o">.</span><span class="n">StructuredDataBlock</span><span class="p">(</span><span class="n">feature_engineering</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">block_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </pre></div>
 
 
@@ -1079,7 +1079,7 @@ which is controlled by a hyperparameter, 'block_type'.</p>
 <ul>
 <li><strong>feature_engineering</strong>: Boolean. Whether to use feature engineering block.
     Defaults to True. If specified as None, it will be tuned automatically.</li>
-<li><strong>module_type</strong>: String. 'dense' or 'lightgbm'. If it is 'dense', DenseBlock
+<li><strong>block_type</strong>: String. 'dense' or 'lightgbm'. If it is 'dense', DenseBlock
     will be used. If it is 'lightgbm', LightGBM will be used. If
     unspecified, it will be tuned automatically.</li>
 <li><strong>seed</strong>: Int. Random seed.</li>
