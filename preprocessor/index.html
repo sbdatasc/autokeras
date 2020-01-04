@@ -262,15 +262,27 @@
       
 
 
+  <li class="md-nav__item">
+    <a href="../install/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
-    <label class="md-nav__link" for="nav-2">
+    <label class="md-nav__link" for="nav-3">
       Getting Started 1.0
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
+      <label class="md-nav__title" for="nav-3">
         Getting Started 1.0
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -446,13 +458,13 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
     
-    <label class="md-nav__link" for="nav-6">
+    <label class="md-nav__link" for="nav-7">
       Documentation
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
+      <label class="md-nav__title" for="nav-7">
         Documentation
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -465,13 +477,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-1" type="checkbox" id="nav-6-1">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-1" type="checkbox" id="nav-7-1">
     
-    <label class="md-nav__link" for="nav-6-1">
+    <label class="md-nav__link" for="nav-7-1">
       Task APIs
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-1">
+      <label class="md-nav__title" for="nav-7-1">
         Task APIs
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -575,13 +587,13 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-3" type="checkbox" id="nav-7-3" checked>
     
-    <label class="md-nav__link" for="nav-6-3">
+    <label class="md-nav__link" for="nav-7-3">
       Building Blocks
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-3">
+      <label class="md-nav__title" for="nav-7-3">
         Building Blocks
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -810,7 +822,6 @@
 <div class="codehilite"><pre><span></span><span class="n">autokeras</span><span class="o">.</span><span class="n">FeatureEngineering</span><span class="p">(</span><span class="n">max_columns</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </pre></div>
 
-
 <p>A preprocessor block does feature engineering for the data.</p>
 <p><strong>Arguments</strong></p>
 <ul>
@@ -834,7 +845,6 @@
     <span class="o">**</span><span class="n">kwargs</span>
 <span class="p">)</span>
 </pre></div>
-
 
 <p>Collection of various image augmentation methods.</p>
 <p><strong>Arguments</strong></p>
@@ -866,7 +876,6 @@
 <div class="codehilite"><pre><span></span><span class="n">autokeras</span><span class="o">.</span><span class="n">LightGBM</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </pre></div>
 
-
 <p>LightGBM Block for classification or regression task.</p>
 <p><strong>Arguments</strong></p>
 <ul>
@@ -877,7 +886,6 @@
 <h3 id="normalization-class">Normalization class</h3>
 <div class="codehilite"><pre><span></span><span class="n">autokeras</span><span class="o">.</span><span class="n">Normalization</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </pre></div>
-
 
 <p>Perform basic image transformation and augmentation.</p>
 <p><strong>Arguments</strong></p>
@@ -891,14 +899,12 @@
 <div class="codehilite"><pre><span></span><span class="n">autokeras</span><span class="o">.</span><span class="n">TextToIntSequence</span><span class="p">(</span><span class="n">max_len</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </pre></div>
 
-
 <p>Convert raw texts to sequences of word indices.</p>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/preprocessor.py#L149">[source]</a></span></p>
 <h3 id="texttongramvector-class">TextToNgramVector class</h3>
 <div class="codehilite"><pre><span></span><span class="n">autokeras</span><span class="o">.</span><span class="n">TextToNgramVector</span><span class="p">(</span><span class="n">ngram_range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">stop_words</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_features</span><span class="o">=</span><span class="mi">20000</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="s2">&quot;l2&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </pre></div>
-
 
 <p>Convert raw texts to n-gram vectors.</p>
 <p><strong>Arguments</strong></p>
@@ -988,6 +994,8 @@
       <script src="../assets/javascripts/application.808e90bb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="https://unpkg.com/mermaid@8.4.4/dist/mermaid.min.js"></script>
       
     
   </body>

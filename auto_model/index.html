@@ -262,15 +262,27 @@
       
 
 
+  <li class="md-nav__item">
+    <a href="../install/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
-    <label class="md-nav__link" for="nav-2">
+    <label class="md-nav__link" for="nav-3">
       Getting Started 1.0
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
+      <label class="md-nav__title" for="nav-3">
         Getting Started 1.0
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -446,13 +458,13 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
     
-    <label class="md-nav__link" for="nav-6">
+    <label class="md-nav__link" for="nav-7">
       Documentation
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
+      <label class="md-nav__title" for="nav-7">
         Documentation
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -465,13 +477,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-1" type="checkbox" id="nav-6-1">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-1" type="checkbox" id="nav-7-1">
     
-    <label class="md-nav__link" for="nav-6-1">
+    <label class="md-nav__link" for="nav-7-1">
       Task APIs
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-1">
+      <label class="md-nav__title" for="nav-7-1">
         Task APIs
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -628,13 +640,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-3" type="checkbox" id="nav-7-3">
     
-    <label class="md-nav__link" for="nav-6-3">
+    <label class="md-nav__link" for="nav-7-3">
       Building Blocks
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-3">
+      <label class="md-nav__title" for="nav-7-3">
         Building Blocks
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -790,7 +802,6 @@
 <span class="p">)</span>
 </pre></div>
 
-
 <p>A Model defined by inputs and outputs.
 AutoModel combines a HyperModel and a Tuner to tune the HyperModel.
 The user can use it in a similar way to a Keras model since it
@@ -801,15 +812,13 @@ of the model. In the second case, user can specify the high-level architecture o
 the AutoModel by connecting the Blocks with the functional API, which is the same
 as the Keras <a href="https://www.tensorflow.org/guide/keras/functional">functional API</a>.</p>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="c1"># The user only specifies the input nodes and output heads.</span>
+<p><div class="codehilite"><pre><span></span><span class="c1"># The user only specifies the input nodes and output heads.</span>
 <span class="kn">import</span> <span class="nn">autokeras</span> <span class="k">as</span> <span class="nn">ak</span>
 <span class="n">ak</span><span class="o">.</span><span class="n">AutoModel</span><span class="p">(</span>
     <span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="n">ak</span><span class="o">.</span><span class="n">ImageInput</span><span class="p">(),</span> <span class="n">ak</span><span class="o">.</span><span class="n">TextInput</span><span class="p">()],</span>
     <span class="n">outputs</span><span class="o">=</span><span class="p">[</span><span class="n">ak</span><span class="o">.</span><span class="n">ClassificationHead</span><span class="p">(),</span> <span class="n">ak</span><span class="o">.</span><span class="n">RegressionHead</span><span class="p">()]</span>
 <span class="p">)</span>
 </pre></div>
-
-
 <div class="codehilite"><pre><span></span><span class="c1"># The user specifies the high-level architecture.</span>
 <span class="kn">import</span> <span class="nn">autokeras</span> <span class="k">as</span> <span class="nn">ak</span>
 <span class="n">image_input</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">ImageInput</span><span class="p">()</span>
@@ -823,9 +832,7 @@ as the Keras <a href="https://www.tensorflow.org/guide/keras/functional">functio
     <span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="n">image_input</span><span class="p">,</span> <span class="n">text_input</span><span class="p">],</span>
     <span class="n">outputs</span><span class="o">=</span><span class="p">[</span><span class="n">classification_output</span><span class="p">,</span> <span class="n">regression_output</span><span class="p">]</span>
 <span class="p">)</span>
-</pre></div>
-
-
+</pre></div></p>
 <p><strong>Arguments</strong></p>
 <ul>
 <li><strong>inputs</strong>: A list of Node instances.
@@ -854,7 +861,6 @@ as the Keras <a href="https://www.tensorflow.org/guide/keras/functional">functio
     <span class="n">x</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">callbacks</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">validation_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">validation_data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
 <span class="p">)</span>
 </pre></div>
-
 
 <p>Search for the best model and hyperparameters for the AutoModel.</p>
 <p>It will search for the best model based on the performances on
@@ -896,7 +902,6 @@ validation data.</p>
 <div class="codehilite"><pre><span></span><span class="n">AutoModel</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </pre></div>
 
-
 <p>Predict the output for a given testing data.</p>
 <p><strong>Arguments</strong></p>
 <ul>
@@ -912,7 +917,6 @@ The predicted results.</p>
 <h3 id="evaluate-method">evaluate method</h3>
 <div class="codehilite"><pre><span></span><span class="n">AutoModel</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </pre></div>
-
 
 <p>Evaluate the best model for the given data.</p>
 <p><strong>Arguments</strong></p>
@@ -1002,6 +1006,8 @@ the scalar outputs.</p>
       <script src="../assets/javascripts/application.808e90bb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="https://unpkg.com/mermaid@8.4.4/dist/mermaid.min.js"></script>
       
     
   </body>

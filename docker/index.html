@@ -262,15 +262,27 @@
       
 
 
+  <li class="md-nav__item">
+    <a href="../install/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
-    <label class="md-nav__link" for="nav-2">
+    <label class="md-nav__link" for="nav-3">
       Getting Started 1.0
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
+      <label class="md-nav__title" for="nav-3">
         Getting Started 1.0
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -503,13 +515,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
     
-    <label class="md-nav__link" for="nav-6">
+    <label class="md-nav__link" for="nav-7">
       Documentation
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
+      <label class="md-nav__title" for="nav-7">
         Documentation
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -522,13 +534,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-1" type="checkbox" id="nav-6-1">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-1" type="checkbox" id="nav-7-1">
     
-    <label class="md-nav__link" for="nav-6-1">
+    <label class="md-nav__link" for="nav-7-1">
       Task APIs
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-1">
+      <label class="md-nav__title" for="nav-7-1">
         Task APIs
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -630,13 +642,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-3" type="checkbox" id="nav-7-3">
     
-    <label class="md-nav__link" for="nav-6-3">
+    <label class="md-nav__link" for="nav-7-3">
       Building Blocks
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-3">
+      <label class="md-nav__title" for="nav-7-3">
         Building Blocks
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -783,7 +795,6 @@
 <div class="codehilite"><pre><span></span><span class="err">docker pull garawalid/autokeras:latest</span>
 </pre></div>
 
-
 <p>Image releases are tagged using the following format:</p>
 <table>
 <thead>
@@ -807,24 +818,20 @@
 <div class="codehilite"><pre><span></span><span class="err">docker run -it --shm-size 2G garawalid/autokeras /bin/bash</span>
 </pre></div>
 
-
 <p>In case you need more memory to run the container, change the value of <code>shm-size</code>. (<a href="https://docs.docker.com/engine/reference/run/#general-form">Docker run reference</a>)</p>
 <h2 id="run-application">Run application :</h2>
 <p>To run a local script <code>file.py</code> using Auto-Keras within the container, mount the host directory <code>-v hostDir:/app</code>.</p>
 <div class="codehilite"><pre><span></span><span class="err">docker run -it -v hostDir:/app --shm-size 2G garawalid/autokeras python file.py</span>
 </pre></div>
 
-
 <h2 id="example">Example :</h2>
 <p>Let's download the mnist example and run it within the container.  </p>
-<p>Download the example :  </p>
+<p>Download the example :<br />
 <div class="codehilite"><pre><span></span><span class="err">curl https://raw.githubusercontent.com/keras-team/autokeras/master/examples/mnist.py --output mnist.py</span>
-</pre></div>
-
-
-<p>Run the mnist example :</p>
+</pre></div></p>
+<p>Run the mnist example :
 <div class="codehilite"><pre><span></span><span class="err">docker run -it -v &quot;$(pwd)&quot;:/app --shm-size 2G garawalid/autokeras python mnist.py</span>
-</pre></div>
+</pre></div></p>
                 
                   
                 
@@ -898,6 +905,8 @@
       <script src="../assets/javascripts/application.808e90bb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="https://unpkg.com/mermaid@8.4.4/dist/mermaid.min.js"></script>
       
     
   </body>

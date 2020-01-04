@@ -261,18 +261,30 @@
       
       
 
+
+  <li class="md-nav__item">
+    <a href="../../install/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
-    <label class="md-nav__link" for="nav-2">
+    <label class="md-nav__link" for="nav-3">
       Getting Started 1.0
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
+      <label class="md-nav__title" for="nav-3">
         Getting Started 1.0
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -512,13 +524,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
     
-    <label class="md-nav__link" for="nav-6">
+    <label class="md-nav__link" for="nav-7">
       Documentation
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
+      <label class="md-nav__title" for="nav-7">
         Documentation
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -531,13 +543,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-1" type="checkbox" id="nav-6-1">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-1" type="checkbox" id="nav-7-1">
     
-    <label class="md-nav__link" for="nav-6-1">
+    <label class="md-nav__link" for="nav-7-1">
       Task APIs
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-1">
+      <label class="md-nav__title" for="nav-7-1">
         Task APIs
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -639,13 +651,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-3" type="checkbox" id="nav-7-3">
     
-    <label class="md-nav__link" for="nav-6-3">
+    <label class="md-nav__link" for="nav-7-3">
       Building Blocks
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-3">
+      <label class="md-nav__title" for="nav-7-3">
         Building Blocks
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -817,7 +829,6 @@ Replace all the <code>/path/to</code> with the path to the csv files.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="s1">&#39;/path/to/eval.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;survived&#39;</span><span class="p">))</span>
 </pre></div>
 
-
 <h2 id="data-format">Data Format</h2>
 <p>The AutoKeras StructuredDataClassifier is quite flexible for the data format.</p>
 <p>The example above shows how to use the CSV files directly. Besides CSV files, it also
@@ -860,7 +871,6 @@ pandas.DataFrame, and tensorflow.data.Dataset.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">))</span>
 </pre></div>
 
-
 <p>The following code shows how to convert numpy.ndarray to tf.data.Dataset.
 Notably, the labels have to be one-hot encoded for multi-class
 classification to be wrapped into tensorflow Dataset.
@@ -878,7 +888,6 @@ classification, it should not be one-hot encoded.</p>
 <span class="c1"># Evaluate the best model with testing data.</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">test_set</span><span class="p">))</span>
 </pre></div>
-
 
 <p>You can also specify the column names and types for the data as follows.
 The <code>column_names</code> is optional if the training data already have the column names, e.g.
@@ -901,7 +910,6 @@ Any column, whose type is not specified will be inferred from the training data.
 <span class="p">)</span>
 </pre></div>
 
-
 <h2 id="validation-data">Validation Data</h2>
 <p>By default, AutoKeras use the last 20% of training data as validation data.
 As shown in the example below, you can use <code>validation_split</code> to specify the percentage.</p>
@@ -910,7 +918,6 @@ As shown in the example below, you can use <code>validation_split</code> to spec
         <span class="c1"># Split the training data and use the last 15% as validation data.</span>
         <span class="n">validation_split</span><span class="o">=</span><span class="mf">0.15</span><span class="p">)</span>
 </pre></div>
-
 
 <p>You can also use your own validation set
 instead of splitting it from the training data with <code>validation_data</code>.</p>
@@ -925,7 +932,6 @@ instead of splitting it from the training data with <code>validation_data</code>
         <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">x_val</span><span class="p">,</span> <span class="n">y_val</span><span class="p">))</span>
 </pre></div>
 
-
 <h2 id="customized-search-space">Customized Search Space</h2>
 <p>For advanced users, you may customize your search space by using
 <a href="/auto_model/#automodel-class">AutoModel</a> instead of
@@ -938,7 +944,7 @@ which type of block you want to use in the search space.  You can use 'dense' fo
 <a href="/preprocessor/#lightgbm-class">LightGBM</a>.  You can also do not specify these
 arguments, which would leave the different choices to be tuned automatically. See
 the following example for detail.</p>
-<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">autokeras</span> <span class="k">as</span> <span class="nn">ak</span>
+<p><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">autokeras</span> <span class="k">as</span> <span class="nn">ak</span>
 
 <span class="n">input_node</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">StructuredDataInput</span><span class="p">()</span>
 <span class="n">output_node</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">StructuredDataBlock</span><span class="p">(</span>
@@ -948,9 +954,7 @@ the following example for detail.</p>
 <span class="n">clf</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">AutoModel</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="n">input_node</span><span class="p">,</span> <span class="n">outputs</span><span class="o">=</span><span class="n">output_node</span><span class="p">,</span> <span class="n">max_trials</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 </pre></div>
-
-
-<p>The usage of <a href="/auto_model/#automodel-class">AutoModel</a> is similar to the
+The usage of <a href="/auto_model/#automodel-class">AutoModel</a> is similar to the
 <a href="https://www.tensorflow.org/guide/keras/functional">functional API</a> of Keras.
 Basically, you are building a graph, whose edges are blocks and the nodes are intermediate outputs of blocks.
 To add an edge from <code>input_node</code> to <code>output_node</code> with
@@ -967,7 +971,6 @@ further. See the following example.</p>
 <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 </pre></div>
 
-
 <h2 id="reference">Reference</h2>
 <p><a href="/structured_data_classifier">StructuredDataClassifier</a>,
 <a href="/auto_model/#automodel-class">AutoModel</a>,
@@ -976,7 +979,8 @@ further. See the following example.</p>
 <a href="/preprocessor/#featureengineering-class">FeatureEngineering</a>,
 <a href="/block/#denseblock-class">DenseBlock</a>,
 <a href="/preprocessor/#lightgbm-class">LightGBM</a>,
-<a href="/head/#classification-head-class">ClassificationHead</a>.</p>
+<a href="/node/#structureddatainput-class">StructuredDataInput</a>,
+<a href="/head/#classificationhead-class">ClassificationHead</a>.</p>
                 
                   
                 
@@ -1050,6 +1054,8 @@ further. See the following example.</p>
       <script src="../../assets/javascripts/application.808e90bb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="https://unpkg.com/mermaid@8.4.4/dist/mermaid.min.js"></script>
       
     
   </body>

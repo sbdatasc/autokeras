@@ -262,15 +262,27 @@
       
 
 
+  <li class="md-nav__item">
+    <a href="../install/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
-    <label class="md-nav__link" for="nav-2">
+    <label class="md-nav__link" for="nav-3">
       Getting Started 1.0
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
+      <label class="md-nav__title" for="nav-3">
         Getting Started 1.0
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -691,13 +703,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
     
-    <label class="md-nav__link" for="nav-6">
+    <label class="md-nav__link" for="nav-7">
       Documentation
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
+      <label class="md-nav__title" for="nav-7">
         Documentation
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -710,13 +722,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-1" type="checkbox" id="nav-6-1">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-1" type="checkbox" id="nav-7-1">
     
-    <label class="md-nav__link" for="nav-6-1">
+    <label class="md-nav__link" for="nav-7-1">
       Task APIs
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-1">
+      <label class="md-nav__title" for="nav-7-1">
         Task APIs
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -818,13 +830,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-3" type="checkbox" id="nav-7-3">
     
-    <label class="md-nav__link" for="nav-6-3">
+    <label class="md-nav__link" for="nav-7-3">
       Building Blocks
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-3">
+      <label class="md-nav__title" for="nav-7-3">
         Building Blocks
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1228,7 +1240,7 @@ Here is an example of the csv file.</p>
 <p>The second argument <code>images_path</code> is the path to the directory containing all the images with those file names listed in the CSV file.
 The returned values <code>x_train</code> and <code>y_train</code> are the numpy arrays,
 which can be directly feed into the <code>fit</code> function of <code>ImageClassifier</code>.</p>
-<p>This CSV file for train or test can be created from folders containing images of a specific class (meaning label):</p>
+<p>This CSV file for train or test can be created from folders containing images of a specific class (meaning label):
 <div class="codehilite"><pre><span></span><span class="err">train</span>
 <span class="err">└───class_1</span>
 <span class="err">│   │   class_1_image_1.png</span>
@@ -1239,9 +1251,7 @@ which can be directly feed into the <code>fit</code> function of <code>ImageClas
 <span class="err">    │   class_2_image_2.png</span>
 <span class="err">    |   ...</span>
 </pre></div>
-
-
-<p>The code below shows an example of how to create the CSV:</p>
+The code below shows an example of how to create the CSV:
 <div class="codehilite"><pre><span></span><span class="err">train_dir = &#39;train&#39; # Path to the train directory</span>
 <span class="err">class_dirs = [i for i in os.listdir(path=train_dir) if os.path.isdir(os.path.join(train_dir, i))]</span>
 <span class="err"> with open(&#39;train/label.csv&#39;, &#39;w&#39;) as train_csv:</span>
@@ -1254,9 +1264,7 @@ which can be directly feed into the <code>fit</code> function of <code>ImageClas
 <span class="err">            writer.writerow({&#39;File Name&#39;: str(image), &#39;Label&#39;:label})</span>
 <span class="err">        label += 1</span>
 <span class="err">    train_csv.close()</span>
-</pre></div>
-
-
+</pre></div></p>
 <h3 id="enable-multi-gpu-training">Enable Multi-GPU Training</h3>
 <p>Auto-Keras support multiple GPU training in the default setting. 
 There's no additional step needed to enable multiple GPU training. 
@@ -1318,33 +1326,27 @@ Otherwise multiple-gpu training may be slower than single-GPU training.</p>
 <p><code>MlpGenerator</code> in <code>net_module.py</code> is a child class of <code>Networkmodule</code>. It can generates neural architecture with MLP modules </p>
 <p>Normally, there's two place to call the MlpGenerator, one is call <code>MlpGenerator.fit</code> while the other is <code>MlpGenerator.final_fit</code>.</p>
 <p>For example, in a image classification class <code>ImageClassifier</code>, one can initialize the cnn module as:</p>
-<div class="codehilite"><pre><span></span><span class="n">mlpModule</span> <span class="o">=</span> <span class="n">MlpModule</span><span class="p">(</span><span class="n">loss</span><span class="p">,</span> <span class="n">metric</span><span class="p">,</span> <span class="n">searcher_args</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span>
+<p><div class="codehilite"><pre><span></span><span class="n">mlpModule</span> <span class="o">=</span> <span class="n">MlpModule</span><span class="p">(</span><span class="n">loss</span><span class="p">,</span> <span class="n">metric</span><span class="p">,</span> <span class="n">searcher_args</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span>
 </pre></div>
-
-
-<p>Where:
+Where:
 * <code>loss</code> and <code>metric</code> determines by the type of training model(classification or regression or others)
 * <code>search_args</code> can be referred in <code>search.py</code>
 * <code>path</code> is the path to store the whole searching process and generated model.
 * <code>verbose</code> is a boolean. Setting it to true prints to stdout.</p>
-<p>Then, for the searching part, one can call:</p>
+<p>Then, for the searching part, one can call:
 <div class="codehilite"><pre><span></span><span class="n">mlpModule</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">n_output_node</span><span class="p">,</span> <span class="n">input_shape</span><span class="p">,</span> <span class="n">train_data</span><span class="p">,</span> <span class="n">test_data</span><span class="p">,</span> <span class="n">time_limit</span><span class="o">=</span><span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
 </pre></div>
-
-
-<p>where:
+where:
 * n_output_node: A integer value represent the number of output node in the final layer.
 * input_shape: A tuple to express the shape of every train entry. For example,
                 MNIST dataset would be (28,28,1).
 * train_data: A PyTorch DataLoader instance representing the training data.
 * test_data: A PyTorch DataLoader instance representing the testing data.
 * time_limit: A integer value represents the time limit on searching for models.</p>
-<p>And for final testing(testing the best searched model), one can call:</p>
+<p>And for final testing(testing the best searched model), one can call:
 <div class="codehilite"><pre><span></span><span class="n">mlpModule</span><span class="o">.</span><span class="n">final_fit</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">test_data</span><span class="p">,</span> <span class="n">trainer_args</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">retrain</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
-
-
-<p>where:
+where:
 * train_data: A DataLoader instance representing the training data.
 * test_data: A DataLoader instance representing the testing data.
 * trainer_args: A dictionary containing the parameters of the ModelTrainer constructor.
@@ -1355,38 +1357,32 @@ Otherwise multiple-gpu training may be slower than single-GPU training.</p>
 and the ResNet module. </p>
 <p>Normally, there's two place to call the CnnGenerator, one is call <code>CnnGenerator.fit</code> while the other is <code>CnnGenerator.final_fit</code>.</p>
 <p>For example, in a image classification class <code>ImageClassifier</code>, one can initialize the cnn module as:</p>
-<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">autokeras</span> <span class="kn">import</span> <span class="n">CnnModule</span>
+<p><div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">autokeras</span> <span class="kn">import</span> <span class="n">CnnModule</span>
 <span class="kn">from</span> <span class="nn">autokeras.nn.loss_function</span> <span class="kn">import</span> <span class="n">classification_loss</span>
 <span class="kn">from</span> <span class="nn">autokeras.nn.metric</span> <span class="kn">import</span> <span class="n">Accuracy</span>
 
 <span class="n">TEST_FOLDER</span> <span class="o">=</span> <span class="s2">&quot;test&quot;</span>
 <span class="n">cnnModule</span> <span class="o">=</span> <span class="n">CnnModule</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="n">classification_loss</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="n">Accuracy</span><span class="p">,</span> <span class="n">searcher_args</span><span class="o">=</span><span class="p">{},</span> <span class="n">path</span><span class="o">=</span><span class="n">TEST_FOLDER</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
-
-
-<p>Where:
+Where:
 * <code>loss</code> and <code>metric</code> determines by the type of training model(classification or regression or others)
 * <code>search_args</code> can be referred in <code>search.py</code>
 * <code>path</code> is the path to store the whole searching process and generated model.
 * <code>verbose</code> is a boolean. Setting it to true prints to stdout.</p>
-<p>Then, for the searching part, one can call:</p>
+<p>Then, for the searching part, one can call:
 <div class="codehilite"><pre><span></span><span class="n">cnnModule</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">n_output_node</span><span class="p">,</span> <span class="n">input_shape</span><span class="p">,</span> <span class="n">train_data</span><span class="p">,</span> <span class="n">test_data</span><span class="p">,</span> <span class="n">time_limit</span><span class="o">=</span><span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
 </pre></div>
-
-
-<p>where:
+where:
 * n_output_node: A integer value represent the number of output node in the final layer.
 * input_shape: A tuple to express the shape of every train entry. For example,
                 MNIST dataset would be (28,28,1).
 * train_data: A PyTorch DataLoader instance representing the training data.
 * test_data: A PyTorch DataLoader instance representing the testing data.
 * time_limit: A integer value represents the time limit on searching for models.</p>
-<p>And for final testing(testing the best searched model), one can call:</p>
+<p>And for final testing(testing the best searched model), one can call:
 <div class="codehilite"><pre><span></span><span class="n">cnnModule</span><span class="o">.</span><span class="n">final_fit</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">test_data</span><span class="p">,</span> <span class="n">trainer_args</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">retrain</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
-
-
-<p>where:
+where:
 * train_data: A DataLoader instance representing the training data.
 * test_data: A DataLoader instance representing the testing data.
 * trainer_args: A dictionary containing the parameters of the ModelTrainer constructor.
@@ -1399,7 +1395,6 @@ for a given text dataset. </p>
 <div class="codehilite"><pre><span></span>    <span class="n">clf</span> <span class="o">=</span> <span class="n">TextClassifier</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y_train</span><span class="p">,</span> <span class="n">time_limit</span><span class="o">=</span><span class="mi">12</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
 </pre></div>
-
 
 <ul>
 <li>x_train: string format text data</li>
@@ -1418,53 +1413,41 @@ should be in string format.
 <h4 id="by-wuyang-chen-from-dr-atlas-wangs-group-at-cse-department-texas-am">by Wuyang Chen from <a href="http://www.atlaswang.com/">Dr. Atlas Wang's group</a> at CSE Department, Texas A&amp;M.</h4>
 <p>class_id_mapping = {0 : "Business", 1 : "Sci/Tech", 2 : "Sports", 3 : "World"}</p>
 <p><code>ObjectDetector</code> in <code>object_detector.py</code> is a child class of <code>Pretrained</code>. Currently it can load a pretrained SSD model (<a href="https://arxiv.org/abs/1512.02325">Liu, Wei, et al. "Ssd: Single shot multibox detector." European conference on computer vision. Springer, Cham, 2016.</a>) and find object(s) in a given image.</p>
-<p>Let's first import the ObjectDetector and create a detection model (<code>detector</code>) with</p>
+<p>Let's first import the ObjectDetector and create a detection model (<code>detector</code>) with
 <div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">autokeras.pretrained.object_detector</span> <span class="kn">import</span> <span class="n">ObjectDetector</span>
 <span class="n">detector</span> <span class="o">=</span> <span class="n">ObjectDetector</span><span class="p">()</span>
 </pre></div>
-
-
-<p>It will automatically download and load the weights into <code>detector</code>.</p>
+It will automatically download and load the weights into <code>detector</code>.</p>
 <p><strong>Note:</strong>  the <code>ObjectDetector</code> class can automatically detect the existance of available cuda device(s), and use the device if exists.</p>
-<p>Finally you can make predictions against an image:</p>
+<p>Finally you can make predictions against an image:
 <div class="codehilite"><pre><span></span>    <span class="n">results</span> <span class="o">=</span> <span class="n">detector</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s2">&quot;/path/to/images/000001.jpg&quot;</span><span class="p">,</span> <span class="n">output_file_path</span><span class="o">=</span><span class="s2">&quot;/path/to/images/&quot;</span><span class="p">)</span>
 </pre></div>
-
-
-<p>Function <code>detector.predict()</code> requires the path to the image. If the <code>output_file_path</code> is not given, the <code>detector</code> will just return the numerical results as a list of dictionaries. Each dictionary is like {"left": int, "top": int, "width": int, "height": int: "category": str, "confidence": float}, where <code>left</code> and <code>top</code> is the (left, top) coordinates of the bounding box of the object and <code>width</code> and <code>height</code> are width and height of the box. <code>category</code> is a string representing the class the object belongs to, and the confidence can be regarded as the probability that the model believes its prediction is correct. If the <code>output_file_path</code> is given, then the results mentioned above will be plotted and saved in a new image file with suffix "_prediction" into the given <code>output_file_path</code>. If you run the example/object_detection/object_detection_example.py, you will get result
+Function <code>detector.predict()</code> requires the path to the image. If the <code>output_file_path</code> is not given, the <code>detector</code> will just return the numerical results as a list of dictionaries. Each dictionary is like {"left": int, "top": int, "width": int, "height": int: "category": str, "confidence": float}, where <code>left</code> and <code>top</code> is the (left, top) coordinates of the bounding box of the object and <code>width</code> and <code>height</code> are width and height of the box. <code>category</code> is a string representing the class the object belongs to, and the confidence can be regarded as the probability that the model believes its prediction is correct. If the <code>output_file_path</code> is given, then the results mentioned above will be plotted and saved in a new image file with suffix "_prediction" into the given <code>output_file_path</code>. If you run the example/object_detection/object_detection_example.py, you will get result
 <code>[{'category': 'person', 'width': 331, 'height': 500, 'left': 17, 'confidence': 0.9741123914718628, 'top': 0}]</code></p>
 <h3 id="sentiment-analysis-tutorial">Sentiment Analysis tutorial.</h3>
 <p><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/pretrained/text_classifier.py">[source]</a></p>
 <p>The sentiment analysis module provides an interface to find the sentiment of any text. The pretrained model is obtained by training <a href="https://arxiv.org/abs/1810.04805">Google AI’s BERT model</a> on <a href="http://ai.stanford.edu/~amaas/data/sentiment/">IMDb dataset</a>. </p>
-<p>Let’s import the <code>SentimentAnalysis</code> module from <em>text_classifier.py</em>. It is derived from the super class <code>TextClassifier</code> which is the child class of <code>Pretrained</code> class.</p>
+<p>Let’s import the <code>SentimentAnalysis</code> module from <em>text_classifier.py</em>. It is derived from the super class <code>TextClassifier</code> which is the child class of <code>Pretrained</code> class.
 <div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">autokeras.pretrained.text_classifier</span> <span class="kn">import</span> <span class="n">SentimentAnalysis</span>
 <span class="n">sentiment_analysis</span> <span class="o">=</span> <span class="n">SentimentAnalysis</span><span class="p">()</span>
 </pre></div>
-
-
-<p>During initialization of <code>SentimentAnalysis</code>, the pretrained model is loaded into memory i.e. CPU’s or GPU’s, if available.</p>
-<p>Now, you may directly call the <code>predict</code> function in <code>SentimentAnalysis</code> class on any input sentence provided as a string as shown below. The function returns a value between 0 and 1. </p>
+During initialization of <code>SentimentAnalysis</code>, the pretrained model is loaded into memory i.e. CPU’s or GPU’s, if available.</p>
+<p>Now, you may directly call the <code>predict</code> function in <code>SentimentAnalysis</code> class on any input sentence provided as a string as shown below. The function returns a value between 0 and 1. 
 <div class="codehilite"><pre><span></span><span class="n">polarity</span> <span class="o">=</span> <span class="n">sentiment_cls</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s2">&quot;The model is working well..&quot;</span><span class="p">)</span>
 </pre></div>
-
-
-<p><strong>Note:</strong> If the output value of the <code>predict</code> function is close to 0, it implies the statement has negative sentiment, whereas value close to 1 implies positive sentiment.</p>
+<strong>Note:</strong> If the output value of the <code>predict</code> function is close to 0, it implies the statement has negative sentiment, whereas value close to 1 implies positive sentiment.</p>
 <p>If you run <em>sentiment_analysis_example.py</em>, you should get an output value of 0.9 which implies that the input statement <em>The model is working well..</em> has strong positive sentiment.</p>
 <h3 id="topic-classification-tutorial">Topic Classification tutorial.</h3>
 <p><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/pretrained/text_classifier.py">[source]</a></p>
 <p>The topic classifier module provides an interface to find the topic of any text. The pretrained model is obtained by training <a href="https://arxiv.org/abs/1810.04805">Google AI’s BERT model</a> on <a href="https://www.di.unipi.it/~gulli/AG_corpus_of_news_articles.html">AGNews dataset</a>. </p>
-<p>Let’s import the <code>TopicClassifier</code> module from <em>text_classifier.py</em>. It is derived from the super class <code>TextClassifier</code> which is the child class of <code>Pretrained</code> class. </p>
+<p>Let’s import the <code>TopicClassifier</code> module from <em>text_classifier.py</em>. It is derived from the super class <code>TextClassifier</code> which is the child class of <code>Pretrained</code> class. 
 <div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">autokeras.pretrained.text_classifier</span> <span class="kn">import</span> <span class="n">TopicClassifier</span>
 <span class="n">topic_classifier</span> <span class="o">=</span> <span class="n">TopicClassifier</span><span class="p">()</span>
 </pre></div>
-
-
-<p>During initialization of <code>TopicClassifier</code>, the pretrained model is loaded into memory i.e. CPU’s or GPU’s, if available.</p>
-<p>Now, you may directly call the <code>predict</code> function in <code>TopicClassifier</code> class on any input sentence provided as a string as shown below. The function returns one of the fours topics <strong>Business</strong>, <strong>Sci/Tech</strong>, <strong>World</strong> and <strong>Sports</strong>. </p>
+During initialization of <code>TopicClassifier</code>, the pretrained model is loaded into memory i.e. CPU’s or GPU’s, if available.</p>
+<p>Now, you may directly call the <code>predict</code> function in <code>TopicClassifier</code> class on any input sentence provided as a string as shown below. The function returns one of the fours topics <strong>Business</strong>, <strong>Sci/Tech</strong>, <strong>World</strong> and <strong>Sports</strong>. 
 <div class="codehilite"><pre><span></span><span class="n">class_name</span> <span class="o">=</span> <span class="n">topic_classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s2">&quot;With some more practice, they will definitely make it to finals..&quot;</span><span class="p">)</span>
-</pre></div>
-
-
+</pre></div></p>
 <p>If you run <em>topic_classifier_example.py</em>, you should see the predict function returns the label <strong>Sports</strong>, which is the predicted label for the input statement.</p>
 <h3 id="voice-generator-tutorial">Voice generator tutorial.</h3>
 <p><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/pretrained/voice_generator/voice_generator.py">[source]</a></p>
@@ -1477,14 +1460,12 @@ The structure contains three main parts:</p>
 </ul>
 <p>For more details, please refer the original paper: 
 <a href="https://arxiv.org/pdf/1710.07654.pdf"><strong>Deep Voice 3: Scaling Text-to-Speech with Convolutional Sequence Learning</strong></a></p>
-<p>Example:</p>
+<p>Example:
 <div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">autokeras.pretrained</span> <span class="kn">import</span> <span class="n">VoiceGenerator</span>
 <span class="n">voice_generator</span> <span class="o">=</span> <span class="n">VoiceGenerator</span><span class="p">()</span>
 <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;The approximation of pi is 3.14&quot;</span>
 <span class="n">voice_generator</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="s2">&quot;test.wav&quot;</span><span class="p">)</span>
-</pre></div>
-
-
+</pre></div></p>
 <h3 id="voice-recognizer-tutorial">Voice recognizer tutorial.</h3>
 <p><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/pretrained/voice_recognizer.py">[source]</a></p>
 <p>The voice recognizer is a refactor of <a href="https://github.com/SeanNaren/deepspeech.pytorch">deepspeech</a>. 
@@ -1497,8 +1478,7 @@ The model structure contains two parts:
 To use the voice recognizer, one should first parse the audio following the standard below:</p>
 <ul>
 <li>First, install the <a href="https://github.com/pytorch/audio">torchaudio</a>, the install process can refer the repo.</li>
-<li>Seconder use the following audio parser</li>
-</ul>
+<li>Seconder use the following audio parser
 <div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">autokeras.constant</span> <span class="kn">import</span> <span class="n">Constant</span>
 <span class="kn">import</span> <span class="nn">torchaudio</span>
 <span class="kn">import</span> <span class="nn">scipy.signal</span>
@@ -1557,15 +1537,13 @@ To use the voice recognizer, one should first parse the audio following the stan
 
 <span class="n">parser</span> <span class="o">=</span> <span class="n">SpectrogramParser</span><span class="p">(</span><span class="n">Constant</span><span class="o">.</span><span class="n">VOICE_RECONGINIZER_AUDIO_CONF</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">spect</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_audio</span><span class="p">(</span><span class="s2">&quot;test.wav&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">contiguous</span><span class="p">()</span>
-</pre></div>
-
-
+</pre></div></li>
+</ul>
 <p>After this we will have the audio parsed as torch tensor in variable <code>spect</code>. Then we can use the following to recognize the voice:</p>
 <div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">autokeras.pretrained</span> <span class="kn">import</span> <span class="n">VoiceRecognizer</span>
 <span class="n">voice_recognizer</span> <span class="o">=</span> <span class="n">VoiceRecognizer</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">voice_recognizer</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">audio_data</span><span class="o">=</span><span class="n">spect</span><span class="p">))</span>
 </pre></div>
-
 
 <p>This voice recognizer pretrained model is well tuned based on the <a href="http://www.speech.cs.cmu.edu/databases/an4/">AN4</a> dataset. It has a large probability 
 cannot perform well on other dataset. </p>
@@ -1651,6 +1629,8 @@ cannot perform well on other dataset. </p>
       <script src="../assets/javascripts/application.808e90bb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="https://unpkg.com/mermaid@8.4.4/dist/mermaid.min.js"></script>
       
     
   </body>

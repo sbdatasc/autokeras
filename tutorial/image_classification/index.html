@@ -261,18 +261,30 @@
       
       
 
+
+  <li class="md-nav__item">
+    <a href="../../install/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
-    <label class="md-nav__link" for="nav-2">
+    <label class="md-nav__link" for="nav-3">
       Getting Started 1.0
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
+      <label class="md-nav__title" for="nav-3">
         Getting Started 1.0
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -512,13 +524,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
     
-    <label class="md-nav__link" for="nav-6">
+    <label class="md-nav__link" for="nav-7">
       Documentation
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
+      <label class="md-nav__title" for="nav-7">
         Documentation
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -531,13 +543,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-1" type="checkbox" id="nav-6-1">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-1" type="checkbox" id="nav-7-1">
     
-    <label class="md-nav__link" for="nav-6-1">
+    <label class="md-nav__link" for="nav-7-1">
       Task APIs
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-1">
+      <label class="md-nav__title" for="nav-7-1">
         Task APIs
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -639,13 +651,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-3" type="checkbox" id="nav-7-3">
     
-    <label class="md-nav__link" for="nav-6-3">
+    <label class="md-nav__link" for="nav-7-3">
       Building Blocks
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-3">
+      <label class="md-nav__title" for="nav-7-3">
         Building Blocks
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -805,7 +817,6 @@ example.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">y_train</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># array([7, 2, 1], dtype=uint8)</span>
 </pre></div>
 
-
 <p>The second step is to run the <a href="/image_classifier">ImageClassifier</a>.</p>
 <div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">autokeras</span> <span class="k">as</span> <span class="nn">ak</span>
 
@@ -819,7 +830,6 @@ example.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">))</span>
 </pre></div>
 
-
 <h2 id="validation-data">Validation Data</h2>
 <p>By default, AutoKeras use the last 20% of training data as validation data.
 As shown in the example below, you can use <code>validation_split</code> to specify the percentage.</p>
@@ -828,7 +838,6 @@ As shown in the example below, you can use <code>validation_split</code> to spec
         <span class="c1"># Split the training data and use the last 15% as validation data.</span>
         <span class="n">validation_split</span><span class="o">=</span><span class="mf">0.15</span><span class="p">)</span>
 </pre></div>
-
 
 <p>You can also use your own validation set
 instead of splitting it from the training data with <code>validation_data</code>.</p>
@@ -843,7 +852,6 @@ instead of splitting it from the training data with <code>validation_data</code>
         <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">x_val</span><span class="p">,</span> <span class="n">y_val</span><span class="p">))</span>
 </pre></div>
 
-
 <h2 id="customized-search-space">Customized Search Space</h2>
 <p>For advanced users, you may customize your search space by using
 <a href="/auto_model/#automodel-class">AutoModel</a> instead of
@@ -854,7 +862,7 @@ data normalization, <code>augment</code> for whether to do data augmentation. Yo
 do not specify these arguments, which would leave the different choices to be
 tuned automatically.
 See the following example for detail.</p>
-<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">autokeras</span> <span class="k">as</span> <span class="nn">ak</span>
+<p><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">autokeras</span> <span class="k">as</span> <span class="nn">ak</span>
 
 <span class="n">input_node</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">ImageInput</span><span class="p">()</span>
 <span class="n">output_node</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">ImageBlock</span><span class="p">(</span>
@@ -868,9 +876,7 @@ See the following example for detail.</p>
 <span class="n">clf</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">AutoModel</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="n">input_node</span><span class="p">,</span> <span class="n">outputs</span><span class="o">=</span><span class="n">output_node</span><span class="p">,</span> <span class="n">max_trials</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 </pre></div>
-
-
-<p>The usage of <a href="/auto_model/#automodel-class">AutoModel</a> is similar to the
+The usage of <a href="/auto_model/#automodel-class">AutoModel</a> is similar to the
 <a href="https://www.tensorflow.org/guide/keras/functional">functional API</a> of Keras.
 Basically, you are building a graph, whose edges are blocks and the nodes are intermediate outputs of blocks.
 To add an edge from <code>input_node</code> to <code>output_node</code> with
@@ -887,7 +893,6 @@ further. See the following example.</p>
 <span class="n">clf</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">AutoModel</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="n">input_node</span><span class="p">,</span> <span class="n">outputs</span><span class="o">=</span><span class="n">output_node</span><span class="p">,</span> <span class="n">max_trials</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 </pre></div>
-
 
 <h2 id="data-format">Data Format</h2>
 <p>The AutoKeras ImageClassifier is quite flexible for the data format.</p>
@@ -920,7 +925,6 @@ work.</p>
 <span class="c1">#        [0., 0., 0., 0., 1., 0., 0., 0., 0., 0.]])</span>
 </pre></div>
 
-
 <p>We also support using <a href="https://www.tensorflow.org/api_docs/python/tf/data/Dataset?version=stable">tf.data.Dataset</a> format for
 the training data. In this case, the images would have to be 3-dimentional.
 The labels have to be one-hot encoded for multi-class
@@ -938,7 +942,6 @@ classification to be wrapped into tensorflow Dataset.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">test_set</span><span class="p">))</span>
 </pre></div>
 
-
 <h2 id="reference">Reference</h2>
 <p><a href="/image_classifier">ImageClassifier</a>,
 <a href="/auto_model/#automodel-class">AutoModel</a>,
@@ -946,7 +949,8 @@ classification to be wrapped into tensorflow Dataset.</p>
 <a href="/preprocessor/#normalization-class">Normalization</a>,
 <a href="/preprocessor/#image-augmentation-class">ImageAugmentation</a>,
 <a href="/block/#resnetblock-class">ResNetBlock</a>,
-<a href="/head/#classification-head-class">ClassificationHead</a></p>
+<a href="/node/#imageinput-class">ImageInput</a>,
+<a href="/head/#classificationhead-class">ClassificationHead</a>.</p>
                 
                   
                 
@@ -1020,6 +1024,8 @@ classification to be wrapped into tensorflow Dataset.</p>
       <script src="../../assets/javascripts/application.808e90bb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="https://unpkg.com/mermaid@8.4.4/dist/mermaid.min.js"></script>
       
     
   </body>
