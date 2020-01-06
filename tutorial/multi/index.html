@@ -438,6 +438,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#customized-search-space" class="md-nav__link">
+    Customized Search Space
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-format" class="md-nav__link">
+    Data Format
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#reference" class="md-nav__link">
     Reference
   </a>
@@ -790,6 +804,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#customized-search-space" class="md-nav__link">
+    Customized Search Space
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-format" class="md-nav__link">
+    Data Format
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#reference" class="md-nav__link">
     Reference
   </a>
@@ -897,7 +925,60 @@ instead of splitting it from the training data with <code>validation_data</code>
         <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">x_val</span><span class="p">,</span> <span class="n">y_val</span><span class="p">))</span>
 </pre></div>
 
-<p>You can customize your search space follow <a href="/tutorial/customized">this tutorial</a>.</p>
+<h2 id="customized-search-space">Customized Search Space</h2>
+<p>You can customize your search space.
+The following figure shows the search space we want to define.</p>
+<div class="mermaid">
+graph LR
+    id1(ImageInput) --> id2(Normalization)
+    id2 --> id3(Image Augmentation)
+    id3 --> id4(Convolutional)
+    id3 --> id5(ResNet V2)
+    id4 --> id6(Merge)
+    id5 --> id6
+    id7(StructuredDataInput) --> id8(Feature Engineering)
+    id8 --> id9(LightGBM)
+    id6 --> id10(Merge)
+    id9 --> id10
+    id10 --> id11(Classification Head)
+    id10 --> id12(Regression Head)
+</div>
+
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">autokeras</span> <span class="k">as</span> <span class="nn">ak</span>
+
+<span class="n">input_node1</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">ImageInput</span><span class="p">()</span>
+<span class="n">output_node</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">Normalization</span><span class="p">()(</span><span class="n">input_node1</span><span class="p">)</span>
+<span class="n">output_node</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">ImageAugmentation</span><span class="p">()(</span><span class="n">output_node</span><span class="p">)</span>
+<span class="n">output_node1</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">ConvBlock</span><span class="p">()(</span><span class="n">output_node</span><span class="p">)</span>
+<span class="n">output_node2</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">ResNetBlock</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="s1">&#39;v2&#39;</span><span class="p">)(</span><span class="n">output_node</span><span class="p">)</span>
+<span class="n">output_node1</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">Merge</span><span class="p">()([</span><span class="n">output_node1</span><span class="p">,</span> <span class="n">output_node2</span><span class="p">])</span>
+
+<span class="n">input_node2</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">StructuredDataInput</span><span class="p">()</span>
+<span class="n">output_node</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">FeatureEngineering</span><span class="p">()(</span><span class="n">input_node2</span><span class="p">)</span>
+<span class="n">output_node2</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">LightGBM</span><span class="p">()(</span><span class="n">output_node</span><span class="p">)</span>
+
+<span class="n">output_node</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">Merge</span><span class="p">()([</span><span class="n">output_node1</span><span class="p">,</span> <span class="n">output_node2</span><span class="p">])</span>
+<span class="n">output_node1</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">ClassificationHead</span><span class="p">()(</span><span class="n">output_node</span><span class="p">)</span>
+<span class="n">output_node2</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">RegressionHead</span><span class="p">()(</span><span class="n">output_node</span><span class="p">)</span>
+
+<span class="n">auto_model</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">AutoModel</span><span class="p">(</span>
+    <span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="n">input_node1</span><span class="p">,</span> <span class="n">input_node2</span><span class="p">],</span> 
+    <span class="n">outputs</span><span class="o">=</span><span class="p">[]</span><span class="n">output_node1</span><span class="p">,</span> <span class="n">output_node2</span><span class="p">],</span>
+    <span class="n">max_trials</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+<h2 id="data-format">Data Format</h2>
+<p>You can refer to the documentation of
+<a href="/node/#imageinput-class">ImageInput</a>,
+<a href="/node/#structureddatainput-class">StructuredDataInput</a>,
+<a href="/node/#textinput-class">TextInput</a>,
+<a href="/head/#regressionhead-class">RegressionHead</a>,
+<a href="/head/#classificationhead-class">ClassificationHead</a>,
+for the format of different types of data.
+You can also refer to the Data Format section of the tutorials of
+<a href="/tutorial/image_classification/#data-format">Image Classification</a>,
+<a href="/tutorial/text_classification/#data-format">Text Classification</a>,
+<a href="/tutorial/structured_data_classification/#data-format">Structured Data Classification</a>.</p>
 <h2 id="reference">Reference</h2>
 <p><a href="/auto_model/#automodel-class">AutoModel</a>,
 <a href="/node/#imageinput-class">ImageInput</a>,
