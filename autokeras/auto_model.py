@@ -1,4 +1,5 @@
 import kerastuner
+import numpy as np
 import tensorflow as tf
 from tensorflow.python.util import nest
 
@@ -83,6 +84,9 @@ class AutoModel(object):
         self.max_trials = max_trials
         self.directory = directory
         self.seed = seed
+        if seed:
+            np.random.seed(seed)
+            tf.random.set_seed(seed)
         self.hyper_graph = None
         self.objective = objective
         # TODO: Support passing a tuner instance.
